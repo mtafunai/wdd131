@@ -20,8 +20,8 @@ p {
 
 .highlight {
 	color: navy;
-	font-weight: 700;
-	font-family: hebrew;
+	font-weight: 100;
+	font-family: "Roboto", sans-serif;
 }
 
 h1 {
