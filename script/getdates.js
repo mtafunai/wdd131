@@ -14,25 +14,29 @@ full.innerHTML = `Today is <span class="highlight">${new Intl.DateTimeFormat(
 	{
 		dateStyle: "full"
 	}
-).format(day)}</span>`;
+)
+.format(today)}</span>`;
 worldfull.innerHTML = `UK: <span class="highlight">${new Intl.DateTimeFormat(
 	"en-UK",
 	{
 		dateStyle: "full"
 	}
-).format(day)}</span>`;
+)
+.format(today)}</span>`;
 short.innerHTML = `Short: <span class="highlight">${new Intl.DateTimeFormat(
 	"en-US",
 	{
 		dateStyle: "short"
 	}
-).format(day)}</span>`;
+)
+.format(today)}</span>`;
 medium.innerHTML = `Medium: <span class="highlight">${new Intl.DateTimeFormat(
 	"en-US",
 	{
 		dateStyle: "medium"
 	}
-).format(day)}</span>`;
+)
+.format(today)}</span>`;
 
 year.innerHTML = `getFullYear(): <span class="highlight">${day.getFullYear()}</span>`;
 month.innerHTML = `getMonth(): <span class="highlight">${day.getMonth()}</span>`;
