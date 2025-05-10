@@ -50,7 +50,7 @@ header{
     padding: 0;
 }
 
-header h1 {
+h1 {
     padding: .5em 1em;
     margin: 0;
     background-color: #ddd;
