@@ -36,7 +36,7 @@ nav a:hover {
 	nav ul {
 		display: flex;
 	}
-	nav ul li: {
+	nav ul li {
 		flex: 1 1 100%; 
 }
 
