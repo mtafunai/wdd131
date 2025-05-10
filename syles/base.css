@@ -33,7 +33,7 @@ nav a:hover {
 }
 
 @media (min-width: 640px) {
-	nav ul {
+	nav ul{
 		display: flex;
 	}
 	nav ul li {
