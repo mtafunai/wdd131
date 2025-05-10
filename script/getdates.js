@@ -9,7 +9,7 @@ const dayofweek = document.querySelector("#dayofweek");
 
 const date = new Date();
 
-ffull.innerHTML = `Today is <span class="highlight">${new Intl.DateTimeFormat(
+full.innerHTML = `Today is <span class="highlight">${new Intl.DateTimeFormat(
 	"en-US",
 	{
 		dateStyle: "full"
