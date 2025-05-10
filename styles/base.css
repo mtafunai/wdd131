@@ -37,6 +37,7 @@ nav a {
 
 nav a:hover {
 	text-decoration: overline;
+	border: 1px solid #fff
 }
 
 .active {
