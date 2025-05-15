@@ -1,27 +1,27 @@
-
+/* Universal Selector */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
+/* HTML Selectors */
 body {
     font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 nav {
-    background-color: rgba(1, 64, 80, 0.897);
+    background-color: rgba(64, 1, 86, 0.886);
     width: 100%;
     position: absolute;
     top: 0;
-    display: flex; 
-    justify-content: space-between; 
-    padding: 0 20px; 
+    display: flex; /*added*/
+    justify-content: space-between; /* Added */
+    padding: 0 20px; /* Added */
 }
 
 nav h6 {
-    margin: 0; 
+    margin: 0; /* Added */
     font-size: larger;
     margin-top: 20px;
     color: white;
@@ -34,18 +34,18 @@ nav ul {
     max-width: -moz-fit-content;
     max-width: fit-content;
     margin: 0 auto;
-    padding: 0; 
+    padding: 0; /* Added */
 }
 
 nav ul li {
     flex: 1 1 auto;
-    margin: 10px 0; 
+    margin: 10px 0; /* Adjusted */
 }
 
 nav ul li:first-child {
     display: block;
     font-size: 2rem;
-    margin-right: auto;
+    margin-right: auto; /* Adjusted */
 }
 
 nav ul li:first-child a {
@@ -53,9 +53,10 @@ nav ul li:first-child a {
 }
 
 nav ul li {
-    display: block;
+    display: block;/*none; adjusted*/
     list-style: none;
- 
+    /*margin: 10px;*/
+}
 
 nav ul li a {
     display: block;
@@ -109,7 +110,7 @@ picture {
 }
 
 img {
-    width: 380px;
+    width: 240px;
     height: auto;
     border-radius: 5%;
     border: 1px solid #ccc;
@@ -117,11 +118,11 @@ img {
 }
 
 figure {
-    text-align: center; 
+    text-align: center; /* Centering the figure content */
 }
 
 figcaption {
-    margin-top: 10px; 
+    margin-top: 10px; /* Adding some space between image and caption */
 }
 
 section {
@@ -129,7 +130,7 @@ section {
     flex-direction: column;
     align-items: center;
     margin: 0 auto 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.185);
+    border: 1px solid rgba(0, 0, 0, .1);
     padding: 1rem;
     background-color: #eee;
 }
@@ -153,7 +154,7 @@ input {
 
 input[type="button"] {
     padding: .5rem;
-    background-color: #444444;
+    background-color: #444;
     color: white;
     border: none;
     border-radius: 5px;
@@ -180,7 +181,7 @@ dd {
 }
 
 footer {
-    background-color:rgba(1, 76, 86, 0.886);
+    background-color:rgba(64, 1, 86, 0.886);
     color: white;
     padding: 4px;
     text-align: center;
@@ -189,6 +190,7 @@ footer {
     
 }
 
+/* Class Selectors */
 .active {
     border-bottom: 1px solid yellow;
 }
@@ -218,24 +220,29 @@ footer {
     gap: 1rem;
 }
 
+/* ID Selectors */
 
 #gridly {
-    max-width: 800px; 
-    margin: 0 auto; 
+    max-width: 800px; /*limiting the width*/
+    margin: 0 auto; /*centers it center horizontally*/
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-    gap: 20px; 
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Gap between grid items */
     text-align: center;
 }
 
 #gridly h2 {
-    grid-column: 1/ -1;
+    grid-column: 1/ -1;/*span across all columns*/
 }
 
 #menu {
 	font-size: 1.5rem;
 	border: 0;
 	background: none;
+	/*color: #000;*/
+ 	/*position: absolute;*/
+    /*top: 0;*/
+	/*left: 0;*/
     color: white;
 }
 
