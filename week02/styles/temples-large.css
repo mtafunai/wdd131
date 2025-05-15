@@ -24,7 +24,7 @@
     }
 
     #home {
-        margin: 100px auto 50px;
+        margin: 100px auto 60px;
         grid-template-columns: 400px 1fr;
         max-width: -moz-fit-content;
         max-width: fit-content;
