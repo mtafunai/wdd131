@@ -11,7 +11,7 @@ body {
 }
 
 nav {
-    background-color: rgba(64, 1, 86, 0.886);
+    background-color: rgba(1, 64, 80, 0.897);
     width: 100%;
     position: absolute;
     top: 0;
@@ -154,7 +154,7 @@ input {
 
 input[type="button"] {
     padding: .5rem;
-    background-color: #444;
+    background-color: #444444;
     color: white;
     border: none;
     border-radius: 5px;
@@ -181,7 +181,7 @@ dd {
 }
 
 footer {
-    background-color:rgba(64, 1, 86, 0.886);
+    background-color:rgba(1, 76, 86, 0.886);
     color: white;
     padding: 4px;
     text-align: center;
