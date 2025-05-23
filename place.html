@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Page - Brazil</title>
+    <meta name="description" content="W03 Assignment for WDD131 BYU I">
+    <meta name="author" content="Danilo Mayer">
+    <link rel="stylesheet" href="styles/place.css">
+</head>
+
+<body>
+    <header>
+        <h1>FIJI</h1>
+    </header>
+    <main>
+        <div id="hero">
+            <picture>
+                <source media="(max-width: 500px)" srcset="images/Brazil-Small.webp">
+                <source media="(max-width: 1000px)" srcset="images/Brazil-Medium.webp">
+                <img src="images/Brazil-Large.webp" alt="Cristo Redentor" width="1200" height="750">
+            </picture>
+            <div id="data">
+                <h2>Data</h2>
+                <p>Area: 8,514,215 km2</p>
+                <p>Population: 215.3 million (2022)</p>
+                <p>Capital: Brasília</p>
+                <p>Language: Portuguese</p>
+                <p>Currency: Brazilian real (R$)</p>
+                <p>Time Zone: Brasilia Standard Time (GMT-3)</p>
+                <p>Calling Code: +55</p>
+                <p>Internet TLD: .br</p>
+            </div>
+            <div id="weather">
+                <h2>Weather <img id="sun" src="images/sunnyweather.svg" alt="sunny weather icon"></h2>
+                <p>Temperature: 8° C</p>
+                <p>Conditions: Sunny</p>
+                <p>Wind Speed: 4.9 Km/h</p>
+                <p>Wind Chill: <span id="windchill"></span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-box">
+        <p>&copy; <span id="currentYear"></span> 🤙 Danilo Mayer - Parana, Brazil 🤙</p>
+        <p id="lastModified"></p>
+    </footer>
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/place.js" defer></script>
+</body>
+
+</html>
