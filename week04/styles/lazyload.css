@@ -15,13 +15,12 @@ img{
     animation: fade 15s;
 }
 
-@keyframes identifier {
-    0%{
+@keyframes fade {
+    0% {
         opacity: 0;
-
     }
 
-    100%{
+    100% {
         opacity: 1;
     }
 }
