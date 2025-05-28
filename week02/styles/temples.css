@@ -232,17 +232,13 @@ footer {
 }
 
 #gridly h2 {
-    grid-column: 1/ -1;/*span across all columns*/
+    grid-column: 1
 }
 
 #menu {
 	font-size: 1.5rem;
 	border: 0;
 	background: none;
-	/*color: #000;*/
- 	/*position: absolute;*/
-    /*top: 0;*/
-	/*left: 0;*/
     color: white;
 }
 
