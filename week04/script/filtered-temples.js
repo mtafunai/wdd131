@@ -78,7 +78,7 @@ const temples = [
     location: "Suva, Fiji",
     dedicated: "2000, June, 18",
     area: 12755,
-    image:"C:\Users\MICHAEL TAFUNAI\Desktop\suva-fiji-temple-58020.jpg"
+    image:"CC:\Users\MICHAEL TAFUNAI\Desktop\suva-fiji-temple-58020.jpg"
   },
 
   {templeName: "Salt Lake City",    
