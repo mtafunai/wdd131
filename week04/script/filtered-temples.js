@@ -100,7 +100,6 @@ const temples = [
 	
 ];
  createTemplecard(temples);
- const nonutahlink = document.querySelector("#nonutah");	
 
  function createTemplecard(filteredTemples)  
  {
