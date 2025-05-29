@@ -92,30 +92,32 @@ createTemplecard(temples);
 
 function createTemplecard(filteredTemples)  
 {
-temples.forEach(temple => { 
-    let card = document.createElement("section");
-    let name = document.createElement("h3");    
-    let location = document.createElement("p"); 
-    let dedicated = document.createElement("p");    
-    let area = document.createElement("p");   
-    let image = document.createElement("img"); 
-    
-    name.textContent = temple.templeName;   
-    location.innerHTML = `<span class="bold">Location: </span>${temple.location}`;    
-    dedicated.innerHTML = `<span class="bold">Dedicated: </span>${temple.dedicated}`;
-    area.innerHTML = `<span class="bold">Size: </span>${temple.area} sq. ft.`;
-    image.setAttribute("src", temple.imageUrl);
-    image.setAttribute("alt", `A picture of ${temple.templeName} Temple`);
-    image.setAttribute("loading", "lazy");
+filteredTemples.forEach(temple => 
+{ 
+	let card = document.createElement("section");
+	let name = document.createElement("h3");    
+	let location = document.createElement("p"); 
+	let dedicated = document.createElement("p");    
+	let area = document.createElement("p");   
+	let image = document.createElement("img"); 
+	 
+	name.textContent = temple.templeName;   
+	location.innerHTML = `<span class="bold">Location: </span>${temple.location}`;    
+	dedicated.innerHTML = `<span class="bold">Dedicated: </span>${temple.dedicated}`;
+	area.innerHTML = `<span class="bold">Size: </span>${temple.area} sq. ft.`;
+	image.setAttribute("src", temple.imageUrl);
+	image.setAttribute("alt", `A picture of ${temple.templeName} Temple`);
+	image.setAttribute("loading", "lazy");
 
-    card.appendChild(name);
-    card.appendChild(location);
-    card.appendChild(dedicated);
-    card.appendChild(area);
-    card.appendChild(image);
-    document.querySelector("res-grid").appendChild(card);
+	card.appendChild(name);
+	card.appendChild(location);
+	card.appendChild(dedicated);
+	card.appendChild(area);
+	card.appendChild(image);
+	document.querySelector("res-grid").appendChild(card);
   }
- }
+);
+}
 
 function DisplayTemples(temples) {
 	gallery.innerHTML = ""
