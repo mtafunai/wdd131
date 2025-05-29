@@ -98,7 +98,7 @@ const temples = [
 		imageUrl:
 		"https://churchofjesuschristtemples.org/assets/img/temples/mendoza-argentina-temple/mendoza-argentina-temple-10403.jpg"
 	}
-	// Add more temple objects here...
+	
 ];
 
 
