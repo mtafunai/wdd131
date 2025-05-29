@@ -1,251 +1,126 @@
-/* Universal Selector */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin-top: -1.5rem;
+    background-color: #f1ebff;
 }
 
-/* HTML Selectors */
-body {
-    font-family: 'Roboto', Helvetica, sans-serif;
+header {
+    background-color: #04556d;
+    color: #f1ebff;
+    display: flex; 
+    justify-content: space-between; 
+}
+
+header h1 {
+    padding: 0.4rem;
+}
+
+#button {
+    font-size: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 0.25rem 0.75rem;
+    background-color: #eee;
+    color: #000;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#button::before {
+    content: "☰";
+}
+
+#button.open::before {
+    content: "❎";
 }
 
 nav {
-    background-color: rgba(64, 1, 86, 0.886);
-    width: 100%;
-    position: absolute;
-    top: 0;
-    display: flex; /*added*/
-    justify-content: space-between; /* Added */
-    padding: 0 20px; /* Added */
+    display: flex; 
 }
 
-nav h6 {
-    margin: 0; /* Added */
-    font-size: larger;
-    margin-top: 20px;
+nav a {
+    display: block; 
     color: white;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: -moz-fit-content;
-    max-width: fit-content;
-    margin: 0 auto;
-    padding: 0; /* Added */
-}
-
-nav ul li {
-    flex: 1 1 auto;
-    margin: 10px 0; /* Adjusted */
-}
-
-nav ul li:first-child {
-    display: block;
-    font-size: 2rem;
-    margin-right: auto; /* Adjusted */
-}
-
-nav ul li:first-child a {
-    padding: 1px 10px;
-}
-
-nav ul li {
-    display: block;/*none; adjusted*/
-    list-style: none;
-    /*margin: 10px;*/
-}
-
-nav ul li a {
-    display: block;
-    padding: 10px;
     text-decoration: none;
-    font-weight: 600;
-    color: white;
-    text-align: center;
-    font-family: 'Arial Narrow', Arial, sans-serif;
-}
-
-nav ul li a:hover {
-    background-color: #efefef;
-    color: black;
-}
-
-h1,
-h2 {
-    text-align: center;
-    margin: 1rem 0 .5rem;
-}
-
-h1 {
-    border-bottom: 1px solid #ccc;
-}
-
-#gridly h1 {
-    margin-top: 80px;
-}
-
-h2 {
+    padding: 2.5rem;
     font-size: 1.5rem;
-    color: navy;
+}
+
+nav a:link, nav a:visited {
+    color: white;
+
+}
+
+nav a:hover {
+    color: white;
+    background-color: rgb(9, 58, 61);
+}
+
+.menu {
+    font-family: 'Times New Roman', Times, serif;
+    list-style: none;
+    display: grid;
+    flex-wrap: wrap;
+    background-color: #333333;
+    align-self: center;
+    margin: 0;
+    padding-right: 3rem;
+}
+
+.menu li {
+    flex: 1 1 auto;
+}
+
+/* Show menu items by default */
+.menu a {
+    display: block;
+    padding: 0.85rem 4rem;
+    text-decoration: none;
     text-align: center;
-    margin : 0 auto;
+    font-weight: 900;
+    font-size: larger;
+    color: #f1ebff;
 }
 
-h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-h6 {
-    font-size: 1rem;
-}
-header {
-    margin-top: 70px;
+.open a { /* This style is no longer needed */
+    /* display: block; */
 }
 
-picture {
-    margin: 0 auto;
+.menu a:hover {
+    font-weight: 800;
+    font-size: medium;
+    background-color: #bfbfd9;
+    color: #333333;
+}
+
+main {
+    display: grid;
+    max-width: 600px;
+    grid-template-columns: 1fr;
+    margin: 1rem;
+}
+
+main h2 {
+    grid-column: 1/2;
+    align-items: center;
+    justify-self: center;
 }
 
 img {
-    width: 240px;
-    height: auto;
-    border-radius: 5%;
-    border: 1px solid #ccc;
+    width: auto;
+    max-width: 325px;
     box-shadow: 0 0 30px #777;
-}
-
-figure {
-    text-align: center; /* Centering the figure content */
-}
-
-figcaption {
-    margin-top: 10px; /* Adding some space between image and caption */
-}
-
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto 1rem;
-    border: 1px solid rgba(0, 0, 0, .1);
-    padding: 1rem;
-    background-color: #eee;
-}
-
-article {
-    margin-bottom: 1rem;
-}
-
-article div {
-    margin-bottom: .5rem;
-    text-align: right;
-}
-
-label {
-    padding: .35rem;
-}
-
-input {
-    padding: .35rem;
-}
-
-input[type="button"] {
-    padding: .5rem;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%
-}
-
-input[type="checkbox"] {
-    width: 25px;
-    height: 25px;
-}
-
-dt {
-    font-weight: 700;
-}
-
-dt::before {
-    content: "🏘️ ";
-}
-
-dd {
-    margin: 0 0 .5rem 2rem;
-    font-size: smaller;
+    height: 200px;
+    border: 1px solid #333;
 }
 
 footer {
-    background-color:rgba(64, 1, 86, 0.886);
-    color: white;
-    padding: 4px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0rem;
     text-align: center;
-    width: 100%;
-    
-    
-}
-
-/* Class Selectors */
-.active {
-    border-bottom: 1px solid yellow;
-}
-
-.open li {
-    display: block;
-}
-
-.block {
-    display: block;
-}
-
-.larger {
-    font-size: larger;
-    color: red;
-}
-
-.right {
-    width: 100%;
-    text-align: right;
-}
-
-.middle {
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    gap: 1rem;
-}
-
-/* ID Selectors */
-
-#gridly {
-    max-width: 800px; /*limiting the width*/
-    margin: 0 auto; /*centers it center horizontally*/
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsive grid layout */
-    gap: 20px; /* Gap between grid items */
-    text-align: center;
-}
-
-#gridly h2 {
-    grid-column: 1
-}
-
-#menu {
-	font-size: 1.5rem;
-	border: 0;
-	background: none;
-    color: white;
-}
-
-#menu::after {
-	content: "☰";
-}
-
-#menu.open::after {
-	content: "❎";
+    background-color: #04556d;
+    color: #f1ebff;
 }
