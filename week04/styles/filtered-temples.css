@@ -1,8 +1,7 @@
-* {
+*{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 
 #hamburger {
     border: none;
@@ -11,15 +10,15 @@
     color: white;
 }
 
-#hamburger::before {
+#hamburger::before{
     content: "☰";
 }
 
-#hamburger.open::before {
+#hamburger.open::before{
     content: "X";
 }
 
-#nav {
+#nav{
     display: flex;
     flex-direction: column;
     background-color: #415e6f;
@@ -30,73 +29,71 @@
     color: white;
 }
 
-nav:hover {
+nav:hover{
     cursor: pointer;
 }
 
-a:hover {
+a:hover{
     cursor: pointer;
 }
 
-#nav-header {
+#nav-header{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-ul {
+ul{
     display: none;
     margin: auto;
     padding-top: 10px;
     padding: 0;
 }
 
-.open-ul {
+.open ul{
     display: block;
-    margin: auto;
+    margin:none;
     padding-top: 10px;
     padding: 0;
 }
 
-li {
+li{
     list-style: none;
     padding: 5px;
 }
 
-li:hover {
+li:hover{
     text-decoration: underline;
     text-underline-offset: 0.1em;
     cursor: pointer;
 }
 
-/* Nav Bar ^^^ */
-/* Main Body vvv */
-
-main {
+main{
     text-align: center;
     max-width: 90%;
-    margin: auto;
+    margin: auto;       
     justify-items: center;
 }
 
-#temple-img {
+#temple-img{
     display: grid;
-    grid-template: 1fr / 1fr;
+    grid-template-columns: 1fr / 1fr;
     gap: 10px;
-}
+    
+}   
 
-#home {
+#home{
     padding: 20px;
-    margin: auto;
+    maaargin: auto;
     text-align: center;
 }
 
-#temple-card {
-    background-color: #EAE9EC;
-    border: 1px solid lightgray;
-    padding: 1rem;
-    max-width: 100%;
-    max-height: 100%;
+#temple-card{
+    background-color: #eae9ec;
+    border: 11px solid lightgray;
+    padding: 1px;
+    max-width: 100% ;
+    max-height:100%;      
 }
 
 #temple-card h2 {
@@ -121,8 +118,6 @@ figure {
     left: -5rem;
 }
 
-/* Main Body ^^^ */
-
 footer {
     background-color: #415e6f;
     color: white;
@@ -132,3 +127,4 @@ footer {
     margin: 0;
     margin-top: 10px;
     padding: 10px;
+}
