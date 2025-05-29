@@ -76,9 +76,9 @@ const temples = [
   {
     templeName: "Fiji Suva",
     location: "Suva, Fiji",
-    dedicated: "2000, October, 19",
+    dedicated: "2000, June, 18",
     area: 12755,
-    imageUrl: "https://churchofjesuschristtemples.org/suva-fiji-temple/photographs/#Gallery-1"
+    image:"C:\Users\MICHAEL TAFUNAI\Desktop\suva-fiji-temple-58020.jpg"
   },
 
   {templeName: "Salt Lake City",    
