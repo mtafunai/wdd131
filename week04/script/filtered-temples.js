@@ -100,8 +100,9 @@ const temples = [
 	
 ];
  createTemplecard(temples);
+ const nonutahlink = document.querySelector("#nonutah");	
 
- function createTemplecard() 
+ function createTemplecard(filteredTemples)  
  {
   temples.forEach(temple => { 
     let card = document.createElement("section");
@@ -124,7 +125,7 @@ const temples = [
     card.appendChild(dedicated);
     card.appendChild(area);
     card.appendChild(image);
-    document.querySelector("#gallery").appendChild(card);
+    document.querySelector("res-grid").appendChild(card);
   }
  }
 
