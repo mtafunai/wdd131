@@ -1,40 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - Temple Album</title>
-    <meta name="description" content="A temple album page with selections of temple pictures">
-    <meta name="author" content="Michael Tafunai">  
-    <link rel="stylesheet" href="week04/styles/filtered-temples.css">
-    <link rel="stylesheet" href="week04/styles/filtered-temples-large.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
-    <script src="week04/scripts/filtered-temples.js" defer></script>
-    <script src="scripts/getdates.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title content="WDD 131, W02 Assignment: Temple Picture Album">WDD 131, W02 Assignment: Temple Picture Album</title>
+  <meta name="author" content="Elisha Mugenyi">
+  <meta name="description" content="Michael Tafunai, WDD 131 - W02 TEMPLE ALBUM ASSIGNMENT, This is a Temple Album page.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css">
+  <script  defer src="scripts/temples.js"></script>
+  <script  defer src="scripts/getdates.js"></script>
+  
 </head>
+
 <body>
     <header>
-        <h1>Temple Album</h1>
-        <nav>
-            <a href="#" id="all-temples">Home</a>
-            <a href="#" id="old-temples">Old</a>
-            <a href="#" id="new-temples">New</a>
-            <a href="#" id="large-temples">Large</a>
-            <a href="#" id="small-temples">Small</a>
+        <h1>WDD 131, W02 Assignment: Temple Picture Album</h1>
+        <nav class="navigation">
+            <h6>Temple Album</h6>
+            <ul id="menu">
+                <li><a id="toggleMenu">&equiv;</a></li>
+                <li><a href="temples.html" class="active">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
         </nav>
-        <button id="menu"></button>
-    </header>
-    <main>
-        <h2 id="selection">Home</h2>
-        <div id="gallery">
-            
-        </div> 
-    </main>
-    <footer>
-        <p>&copy;<span id="currentyear"></span> | Michael Tafunai| Suva, Fiji</p>
-        <p id="lastModified"></p>
+</header>
+  <main id="gridly">
+    <h2>Latter-day Saints Temples</h2>
+
+    <figure>
+      <img src="images/Aba Nigeria Temple.jpg" alt="Aba, Nigeria temple">
+      <figcaption>Aba, Nigeria Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/barranquilla, Columbia temple.jpg" alt="Barranquilla, Columbia temple">
+      <figcaption>Barranquilla, Columbia Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Cedar City, Utah temple.jpg" alt="Cedar City, Utah temple">
+      <figcaption>Cedar City, Utah Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Lima, Peru temple.jpg" alt="Lima, Peru temple">
+      <figcaption>Lima, Peru Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Manti, Utah temple.jpg" alt="Manti, Utah temple">  
+      <figcaption>Manti, Utah Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Mexico City, Mexico temple.jpg" alt="Mexico City, Mexico temple">
+      <figcaption>Mexico City, Mexico Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Provo, Utah temple.jpg" alt="Provo, Utah temple">
+      <figcaption>Provo, Utah Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Sean, Wilhelm temple.jpg" alt="Sean, Wilhelm Temple">
+      <figcaption>Sean, Wilhelm Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Santiago, Chile temple.jpg" alt="Santiago, Chile temple">
+      <figcaption>Santiago, Chile Temple</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Yigo, Guam temple.jpg" alt="Yigo, Guam temple">
+      <figcaption>Yigo, Guam Temple</figcaption>
+    </figure>
+  </main>
+
+
+  <footer>
+        <p>
+         <p>©<span id="currentyear">2025</span> 📸 Michael Tafunai 📸 Fiji - PR</p>
+        </p>
+         <p class="lastM">Last Modification: <span id="lastModified">15/05/2025 22:19:59</span></p>
     </footer>
+    
+  
 </body>
+
 </html>
