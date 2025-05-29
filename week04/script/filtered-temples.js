@@ -78,7 +78,8 @@ const temples = [
     location: "Suva, Fiji",
     dedicated: "2000, October, 19",
     area: 12755,
-    imageUrl:https://churchofjesuschristtemples.org/suva-fiji-temple/photographs/#Gallery-1
+    imageUrl: "https://churchofjesuschristtemples.org/suva-fiji-temple/photographs/#Gallery-1"
+  },
 
   {templeName: "Salt Lake City",    
     location: "Salt Lake City, Utah, United States",
