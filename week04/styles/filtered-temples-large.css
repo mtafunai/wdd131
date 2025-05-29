@@ -1,30 +1,25 @@
-/* Media Queries */
-
-@media screen and (min-width: 480px) {
-    #temple-img {
-        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    }
-
-    #hamburger {
+@media  screen and (min-width: 520px) {
+    #menu {
         display: none;
     }
 
-    #nav {
+
+    nav {
         display: flex;
+        position: initial;
+        justify-content: center;
+        margin: auto;
+        width: 80%;
         flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        
     }
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        float: right;
-        margin: 0;
-        text-align: center;
-        padding: 0;
-        min-width: 35%;
-        justify-content: space-between;
+    nav a {
+        display: block;
+        /* flex: 1 1 100%; */
     }
+
+    nav a.active {
+        color: #ff3232;
+    }
+
 }

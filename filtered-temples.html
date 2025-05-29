@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="week04/styles/filtered-temples.css">
-    <link rel="stylesheet" href="week04/styles/filtered-temples-large.css">
-    <script src="week04/scripts/filtered-temples.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Tafunai - Temple Album</title>
-    <meta name="description" content="Temples website project featuring JS coded hamburger menu along with media query">
-    <meta name="author" content="Michael Tafunai">
+    <title>WDD 131 - Temple Album</title>
+    <meta name="description" content="A temple album page with selections of temple pictures">
+    <meta name="author" content="Santiago Ariel Chaparro">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <script src="scripts/filtered-temples.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
     <header>
-        <nav id="nav">
-            <div id="nav-header">
-                <h1>Temple Album</h1>
-                <button id="hamburger" title="menu button"></button>
-            </div>
-            <ul>
-                <li><a id="home-button">Home</a></li>
-                <li><a id="old-button">Old</a></li>
-                <li><a id="new-button">New</a></li>
-                <li><a id="large-button">Large</a></li>
-                <li><a id="small-button">Small</a></li>
-            </ul>
+        <h1>Temple Album</h1>
+        <nav>
+            <a href="#" id="all-temples">Home</a>
+            <a href="#" id="old-temples">Old</a>
+            <a href="#" id="new-temples">New</a>
+            <a href="#" id="large-temples">Large</a>
+            <a href="#" id="small-temples">Small</a>
         </nav>
+        <button id="menu"></button>
     </header>
     <main>
-        <h2 id="home">Home</h2>
-        <div id="temple-img"></div>
-        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
+        <h2 id="selection">Home</h2>
+        <div id="gallery">
+            
+        </div> 
     </main>
-        <footer>
-            <p>©<span id="currentyear"></span> Michael  Tafunai</p>
-            <p>Last Modified: <span id="lastModified"></span></p>
-        </footer>
+    <footer>
+        <p>&copy;<span id="currentyear"></span> | Santiago A. Chaparro | Buenos Aires, Argentina</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>
