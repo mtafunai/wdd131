@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="week04/styles/filtered-temple.css">
-    <link rel="stylesheet" href="week04/styes/filtered-temples-larger.css">
-    <script src="week04/script/filtered-temples.js" defer></script>
+    <link rel="stylesheet" href="week04/styles/filtered-temples.css">
+    <link rel="stylesheet" href="week04/styles/filtered-temples-large.css">
+    <script src="week04/scripts/filtered-temples.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - Dynamic Web Fundamentals - Michel Tafunai Temple Album</title>
+    <title>Michael Tafunai - Temple Album</title>
     <meta name="description" content="Temples website project featuring JS coded hamburger menu along with media query">
     <meta name="author" content="Michael Tafunai">
 </head>
 <body>
     <header>
-        <h1> Temple Picture Album</h1>
-        <nav class="navigation">
-            <h6>Temple Album</h6>
-            <ul id="menu">
-                <li><a id="toggleMenu">&equiv;</a></li>
-                <li><a href="temples.html" class="active">Home</a></li>
-                <li><a href="#">Old</a></li>
-                <li><a href="#">New</a></li>
-                <li><a href="#">Large</a></li>
-                <li><a href="#">Small</a></li>
+        <nav id="nav">
+            <div id="nav-header">
+                <h1>Temple Album</h1>
+                <button id="hamburger" title="menu button"></button>
+            </div>
+            <ul>
+                <li><a id="home-button">Home</a></li>
+                <li><a id="old-button">Old</a></li>
+                <li><a id="new-button">New</a></li>
+                <li><a id="large-button">Large</a></li>
+                <li><a id="small-button">Small</a></li>
             </ul>
         </nav>
     </header>
-    <main id="gridly">
-            <h2>Latter-day Saints Temples</h2>
-                 <div id="temple-img"></div>
-                 <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-                 <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-                 <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-                 <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-                 <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-                 <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-                 <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-                 <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
-                 <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
+    <main>
+        <h2 id="home">Home</h2>
+        <div id="temple-img"></div>
+        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
+        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
+        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
+        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
+        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
+        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
+        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
+        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
+        <figure><img src="#" alt="#"><figcaption> </figcaption></figure>
     </main>
         <footer>
-            <p>©<span id="currentyear"></span> Michael Tafunai - Suva, Fiji/p>
+            <p>©<span id="currentyear"></span> Michael  Tafunai</p>
             <p>Last Modified: <span id="lastModified"></span></p>
         </footer>
 </body>
