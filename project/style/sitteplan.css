@@ -1,0 +1,95 @@
+body {
+    margin: 0 auto;
+    text-align: center;
+    background-color: lightgray;
+}
+
+main {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+header, footer {
+    background-color: #021f30;
+    padding: 30px;
+    color: white;
+}
+
+h1 {
+    background-color: #021f30;
+    color: white;
+    font-family: "MedievalSharp", Arial, Helvetica, sans-serif;
+    padding: 20px;
+    width: 300px;
+    margin: 40px auto;
+}
+
+h2 {
+    font-family: "MedievalSharp", Arial, Helvetica, sans-serif ;
+}
+
+p {
+    font-family: "Merriweather", Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.paraBackground {
+    background-color: #F5F5F5;
+    margin: 60px auto;
+    padding: 10px;
+}
+
+#colorSchemaDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#white, #black {
+    margin: 20px auto;
+    width: 6rem;
+    height: 6rem;
+    padding: 20px;
+    align-content: center;
+    border: 1px solid black;
+}
+
+#black {
+    background-color: #000000;
+    color: white;
+}
+
+#white {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#typographyHeading {
+    font-family: "MedievalSharp", Arial, Helvetica, sans-serif;
+}
+
+.wireframes {
+    margin: 3rem auto;
+}
+
+#largeWireframe {
+    width: 45%;
+    height: auto;
+}
+
+#smallWireframe {
+    width: 40%;
+    height: auto;
+}
+
+.cta-button {
+    background-color: #030303;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+
+}
