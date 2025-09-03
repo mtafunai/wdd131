@@ -51,14 +51,18 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s, transform 0.3s;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:focus {
   color: #ffeb3b; /* rugby yellow */
-  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.15);
   text-decoration: underline;
 }
+
 
 /* Main Content */
 main {
