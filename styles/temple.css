@@ -1,0 +1,40 @@
+/* Hamburger menu */
+#navMenu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;      
+  top: 0;
+  right: -250px;         
+  width: 250px;
+  height: 100%;
+  background: #003060;
+  padding-top: 3rem;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+#navMenu.show {
+  right: 0;              
+}
+
+#navMenu li a {
+  display: block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+#navMenu li a:hover {
+  background: #0055aa;
+}
+
+#hamburger {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;          
+  position: relative;
+}
