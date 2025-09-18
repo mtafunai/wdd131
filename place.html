@@ -24,10 +24,11 @@
     <!-- Hero Section -->
     <section class="hero">
       <picture>
-        <source srcset="images/Fiji Island.jpg" media="(min-width: 900px)">
-        <source srcset="images/Suva City.jpg" media="(min-width: 600px)">
-        <img src="images/Fiji Beach.jpg" alt="Beautiful Fiji Beach">
+        <source srcset="images/fiji-island.webp" media="(min-width: 900px)" type="image/webp">
+        <source srcset="images/suva-city.webp" media="(min-width: 600px)" type="image/webp">
+        <img src="images/fiji-beach.webp" alt="Beautiful Fiji Beach">
       </picture>
+
       <h2>Welcome to Paradise</h2>
     </section>
 
@@ -42,6 +43,7 @@
     <!-- Weather Section -->
     <section class="weather">
       <h2>Weather <span class="icon"></span></h2>
+      <h2>Weather <img src="images/sunny.svg" alt="Sunny Weather" class="icon"></h2>
       <p><strong>Temperature:</strong> <span id="temp">28</span> °C</p>
       <p><strong>Wind Speed:</strong> <span id="wind">15</span> km/h</p>
       <p><strong>Wind Chill:</strong> <span id="windchill">N/A</span></p>
@@ -49,8 +51,9 @@
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Fiji Travel Page</p>
-    <p>Last Modified: <span id="lastModified"></span></p>
-  </footer>
+  <p>&copy; <span id="year"></span> Fiji Travel Page | Created by Michael Tafunai</p>
+  <p>Last Modified: <span id="lastModified"></span></p>
+</footer>
+
 </body>
 </html>
