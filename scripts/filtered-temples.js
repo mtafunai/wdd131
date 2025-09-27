@@ -5,36 +5,36 @@ hamButton.addEventListener('click', () => {
     navigation.classList.toggle('show');
     hamButton.classList.toggle('open');
 
-    //check if menu is open
+
     if (navigation.classList.contains('show')) {
-        //change the content of hambutton to show green x mark
+        
         hamButton.textContent = "❎";
     } else {
-        //change the content of the hamButton to show the menu icon
+        
         hamButton.textContent = "☰"
     }
 });
 
-// Event listener for clicks on links within the menu
+
 document.querySelectorAll('.navigation a').forEach(link => {
     link.addEventListener('click', () => {
-        // Close the menu after a link is clicked
+    
         navigation.classList.remove('show');
         hamButton.classList.remove('open');
 
-        //change the content of the hamButton to show menu icon
+        
         hamButton.textContent = "☰"
     });
 });
 
 const temples = [
     {
-      templeName: "Aba Nigeria",
-      location: "Aba, Nigeria",
-      dedicated: "2005, August, 7",
-      area: 11500,
-      imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
+    templeName: "Aba Nigeria",
+    location: "Aba, Nigeria",
+    dedicated: "2005, August, 7",
+    area: 11500,
+    imageUrl:
+    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
     },
     {
       templeName: "Manti Utah",
@@ -120,16 +120,16 @@ const temples = [
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/provo-utah/400x250/provo-temple-lds-890642-wallpaper.jpg"
       }
   ];
-// Function to display all temples
+
 function displayAllTemples() {
-    gridly.innerHTML = ''; // Clear the current display
+    gridly.innerHTML = ''; 
   
     temples.forEach((temple) => {
       displayTemple(temple);
     });
   }
   
-  // Function to display a single temple
+  
   function displayTemple(temple) {
     const templeDiv = document.createElement("div");
     templeDiv.classList.add("temple");
@@ -137,7 +137,7 @@ function displayAllTemples() {
     const templeImage = document.createElement("img");
     templeImage.src = temple.imageUrl;
     templeImage.alt = temple.templeName;
-    templeImage.loading = "lazy"; // Lazy loading
+    templeImage.loading = "lazy"; 
   
     const templeInfo = document.createElement("div");
     templeInfo.classList.add("temple-info");
@@ -165,9 +165,9 @@ function displayAllTemples() {
     gridly.appendChild(templeDiv);
   }
   
-  // Event listeners for navigation menu items
+  
   document.getElementById("menu").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent default behavior of links
+    event.preventDefault(); 
   
     const target = event.target;
     const id = target.id;
@@ -190,9 +190,9 @@ function displayAllTemples() {
     }
   });
   
-  // Function to filter and display old temples
+  
   function displayOldTemples() {
-    gridly.innerHTML = ''; // Clear the current display
+    gridly.innerHTML = ''; 
   
     temples.forEach((temple) => {
       if (parseInt(temple.dedicated.split(',')[0]) < 1900) {
@@ -201,9 +201,9 @@ function displayAllTemples() {
     });
   }
   
-  // Function to filter and display new temples
+  
   function displayNewTemples() {
-    gridly.innerHTML = ''; // Clear the current display
+    gridly.innerHTML = ''; 
   
     temples.forEach((temple) => {
       if (parseInt(temple.dedicated.split(',')[0]) > 2000) {
@@ -212,9 +212,9 @@ function displayAllTemples() {
     });
   }
   
-  // Function to filter and display large temples
+  
   function displayLargeTemples() {
-    gridly.innerHTML = ''; // Clear the current display
+    gridly.innerHTML = ''; 
   
     temples.forEach((temple) => {
       if (temple.area > 90000) {
@@ -223,9 +223,9 @@ function displayAllTemples() {
     });
   }
   
-  // Function to filter and display small temples
+ 
   function displaySmallTemples() {
-    gridly.innerHTML = ''; // Clear the current display
+    gridly.innerHTML = ''; 
   
     temples.forEach((temple) => {
       if (temple.area < 10000) {
@@ -234,5 +234,5 @@ function displayAllTemples() {
     });
   }
   
-  // Initially display all temples
+ 
   displayAllTemples();

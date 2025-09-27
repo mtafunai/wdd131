@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtered Temples</title>
-    <link rel="stylesheet" href="filtered-temples.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title content="WDD 131, W04 Assignment: Filtered Temple Album">WDD 131, W04 Assignment: Filtered Temple Album</title>
+  <meta name="author" content="Michael Tafunai">
+  <meta name="description" content="Michael Tafunai, WDD 131 - W04 TEMPLE ALBUM EHANCEMENT, This is a Temple album that a user can filter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css">
+  <script  defer src="scripts/filtered-temples.js"></script>
+  <script  defer src="scripts/getdates.js"></script>
+  
 </head>
+
 <body>
     <header>
-        <h1>Temple Gallery</h1>
-        <nav>
-            <button id="home">Home</button>
-            <button id="old">Old</button>
-            <button id="new">New</button>
-            <button id="large">Large</button>
-            <button id="small">Small</button>
+        <h1>WDD 131, W04 Assignment: Filtered Temple Album</h1>
+        <nav class="navigation">
+            <h6>Temple Album</h6>
+            <ul id="menu">
+                <li><a id="toggleMenu">&equiv;</a></li>
+                <li><a href="temples.html" class="clicked">Home</a></li>
+                <li><a href="#" id="old" class="clicked">Old</a></li>
+                <li><a href="#" id="new" class="clicked">New</a></li>
+                <li><a href="#" id="large" class="clicked">Large</a></li>
+                <li><a href="#" id="small" class="clicked">Small</a></li>
+            </ul>
         </nav>
-    </header>
+</header>
+  <div class="display" id="gridly">
+    <h2>Latter-day Saints Temples</h2>
+  </div>
 
-    <main id="temples-container">
-        <!-- Temple cards will be dynamically injected here -->
-    </main>
 
-    <script src="filtered-temples.js"></script>
+  <footer>
+        <p>
+          <span id="currentyear"></span> Michael Tafunai
+        </p>
+        <p id="lastModified">last</p>
+    </footer>
+    
+  
 </body>
 </html>
