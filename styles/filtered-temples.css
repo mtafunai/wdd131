@@ -1,3 +1,4 @@
+/* Reset & body styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Header styling */
 header {
     background-color: #2c3e50;
     color: white;
@@ -12,6 +14,11 @@ header {
     text-align: center;
 }
 
+header h1 {
+    margin: 0;
+}
+
+/* Navigation buttons */
 nav {
     margin-top: 0.5rem;
 }
@@ -22,7 +29,7 @@ nav button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #34495e; /* default color */
+    background-color: #34495e;
     color: white;
     transition: background-color 0.3s, transform 0.2s;
 }
@@ -32,12 +39,13 @@ nav button:hover {
     transform: scale(1.05);
 }
 
-/* Optional: visually indicate active button */
+/* Active button highlight */
 nav button.active {
-    background-color: #1abc9c; /* same as hover for consistency */
+    background-color: #1abc9c;
     transform: scale(1.05);
 }
 
+/* Main container grid */
 #temples-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -45,6 +53,7 @@ nav button.active {
     padding: 1rem;
 }
 
+/* Temple card styling */
 .temple-card {
     background-color: white;
     border-radius: 10px;
@@ -58,12 +67,14 @@ nav button.active {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* Temple image */
 .temple-card img {
     width: 100%;
     height: auto;
     display: block;
 }
 
+/* Temple details */
 .temple-card .details {
     padding: 0.5rem 1rem;
 }
@@ -76,4 +87,20 @@ nav button.active {
 .temple-card .details p {
     margin: 0.25rem 0;
     font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    nav button {
+        margin: 0.25rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .temple-card .details h2 {
+        font-size: 1rem;
+    }
+
+    .temple-card .details p {
+        font-size: 0.85rem;
+    }
 }
