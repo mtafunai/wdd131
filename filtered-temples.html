@@ -1,47 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Filtered Temples — Picture Album Enhancement</title>
-  <link rel="stylesheet" href="filtered-temples.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Temples</title>
+    <link rel="stylesheet" href="filtered-temples.css">
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="logo">T</div>
-      <div>
-        <h1>Temple Picture Album</h1>
-        <p class="lead">Dynamic cards • lazy-loaded images • interactive filters</p>
-      </div>
-    </div>
+    <header>
+        <h1>Temple Gallery</h1>
+        <nav>
+            <button id="home">Home</button>
+            <button id="old">Old</button>
+            <button id="new">New</button>
+            <button id="large">Large</button>
+            <button id="small">Small</button>
+        </nav>
+    </header>
 
-    <nav class="top-nav" aria-label="Temple filters">
-      <button class="nav-btn active" id="home" aria-pressed="true">Home</button>
-      <button class="nav-btn" id="old" aria-pressed="false">Old</button>
-      <button class="nav-btn" id="new" aria-pressed="false">New</button>
-      <button class="nav-btn" id="large" aria-pressed="false">Large</button>
-      <button class="nav-btn" id="small" aria-pressed="false">Small</button>
-    </nav>
-  </header>
+    <main id="temples-container">
+        <!-- Temple cards will be dynamically injected here -->
+    </main>
 
-  <main>
-    <div class="controls">
-      <div class="stat" id="count">Showing 0 temples</div>
-      <div class="stat" id="active-filter">Filter: Home</div>
-    </div>
-
-    <section id="temple-cards" class="temple-container" aria-live="polite">
-      <!-- Cards injected here -->
-    </section>
-  </main>
-
-  <footer>
-    <div>Assignment: W04 — Picture Album Enhancement</div>
-    <div style="margin-top:.35rem">Image sources: public web image URLs (absolute addresses)</div>
-  </footer>
-
-  <script src="filtered-temples.js"></script>
+    <script src="filtered-temples.js"></script>
 </body>
 </html>
-

@@ -1,19 +1,3 @@
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
-const overlay = document.getElementById("overlay");
-
-function toggleMenu() {
-  navMenu.classList.toggle("show");
-  overlay.classList.toggle("show");
-  hamburger.textContent = navMenu.classList.contains("show") ? "✖" : "☰";
-}
-
-// Open/close menu
-hamburger.addEventListener("click", toggleMenu);
-
-// Close menu if overlay is clicked
-overlay.addEventListener("click", toggleMenu);
-
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -63,91 +47,81 @@ const temples = [
     dedicated: "1983, December, 2",
     area: 116642,
     imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
-  }
-];
-
-// Add 3 additional temples
-temples.push(
+  },
+  // Added 3 more temples
   {
-    templeName: "Nairobi Kenya",
-    location: "Nairobi, Kenya",
-    dedicated: "2019, October, 13",
-    area: 10000,
-    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/nairobi-kenya/400x250/nairobi-kenya-temple-exterior.jpg"
+    templeName: "Tokyo Japan",
+    location: "Tokyo, Japan",
+    dedicated: "1980, October, 27",
+    area: 68000,
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/tokyo-japan/400x250/tokyo_japan_temple.jpg"
   },
   {
     templeName: "Rome Italy",
     location: "Rome, Italy",
     dedicated: "2019, March, 10",
-    area: 34600,
-    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-1.jpg"
+    area: 9500,
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome_italy_temple.jpg"
   },
   {
-    templeName: "Sapporo Japan",
-    location: "Sapporo, Japan",
-    dedicated: "2016, October, 16",
-    area: 10000,
-    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/sapporo-japan/400x250/sapporo-japan-temple-exterior.jpg"
+    templeName: "Sydney Australia",
+    location: "Sydney, Australia",
+    dedicated: "1984, September, 15",
+    area: 97000,
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/sydney-australia/400x250/sydney_australia_temple.jpg"
   }
-);
+];
 
-// DOM elements
-const container = document.getElementById('temple-cards');
-const countEl = document.getElementById('count');
-const activeFilterEl = document.getElementById('active-filter');
-const navButtons = Array.from(document.querySelectorAll('.nav-btn'));
+// Function to create temple cards
+function displayTemples(templesToDisplay) {
+    const container = document.getElementById("temples-container");
+    container.innerHTML = "";
 
-// Create card
-function createTempleCard(t) {
-  const card = document.createElement('article');
-  card.className = 'temple-card';
-  card.setAttribute('tabindex','0');
-  card.innerHTML = `
-    <div class="card-media">
-      <img src="${t.imageUrl}" alt="${t.templeName}" loading="lazy" decoding="async">
-    </div>
-    <div class="card-body">
-      <h2>${t.templeName}</h2>
-      <p class="meta"><strong>Location:</strong> ${t.location}</p>
-      <p class="meta"><strong>Dedicated:</strong> ${new Date(t.dedicated).toLocaleDateString()}</p>
-      <p class="meta"><strong>Area:</strong> ${t.area.toLocaleString()} sq ft</p>
-    </div>
-  `;
-  return card;
+    templesToDisplay.forEach(temple => {
+        const card = document.createElement("div");
+        card.classList.add("temple-card");
+
+        card.innerHTML = `
+            <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+            <div class="details">
+                <h2>${temple.templeName}</h2>
+                <p><strong>Location:</strong> ${temple.location}</p>
+                <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+                <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+            </div>
+        `;
+        container.appendChild(card);
+    });
 }
 
-// Display cards
-function displayTemples(list){
-  container.innerHTML='';
-  if(!list.length){
-    container.innerHTML='<div style="padding:1rem;color:#667085;">No temples match this filter.</div>';
-  } else {
-    const frag = document.createDocumentFragment();
-    list.forEach(t=>frag.appendChild(createTempleCard(t)));
-    container.appendChild(frag);
-  }
-  countEl.textContent = `Showing ${list.length} temple${list.length===1?'':'s'}`;
+// Filter functions
+function filterTemples(criteria) {
+    let filtered = [];
+    switch(criteria) {
+        case 'old':
+            filtered = temples.filter(t => new Date(t.dedicated) < new Date("1900-01-01"));
+            break;
+        case 'new':
+            filtered = temples.filter(t => new Date(t.dedicated) > new Date("2000-01-01"));
+            break;
+        case 'large':
+            filtered = temples.filter(t => t.area > 90000);
+            break;
+        case 'small':
+            filtered = temples.filter(t => t.area < 10000);
+            break;
+        default:
+            filtered = temples;
+    }
+    displayTemples(filtered);
 }
 
-// Initial render
+// Event listeners for navigation buttons
+document.getElementById("home").addEventListener("click", () => filterTemples("all"));
+document.getElementById("old").addEventListener("click", () => filterTemples("old"));
+document.getElementById("new").addEventListener("click", () => filterTemples("new"));
+document.getElementById("large").addEventListener("click", () => filterTemples("large"));
+document.getElementById("small").addEventListener("click", () => filterTemples("small"));
+
+// Display all temples on page load
 displayTemples(temples);
-
-// Active button highlight
-function setActiveButton(id){
-  navButtons.forEach(b=>b.classList.toggle('active',b.id===id));
-  navButtons.forEach(b=>b.setAttribute('aria-pressed',b.id===id?'true':'false'));
-  activeFilterEl.textContent=`Filter: ${id.charAt(0).toUpperCase()+id.slice(1)}`;
-}
-
-// Filters
-document.getElementById('home').addEventListener('click',()=>{setActiveButton('home'); displayTemples(temples);});
-document.getElementById('old').addEventListener('click',()=>{setActiveButton('old'); displayTemples(temples.filter(t=>new Date(t.dedicated).getFullYear()<1900));});
-document.getElementById('new').addEventListener('click',()=>{setActiveButton('new'); displayTemples(temples.filter(t=>new Date(t.dedicated).getFullYear()>2000));});
-document.getElementById('large').addEventListener('click',()=>{setActiveButton('large'); displayTemples(temples.filter(t=>t.area>90000));});
-document.getElementById('small').addEventListener('click',()=>{setActiveButton('small'); displayTemples(temples.filter(t=>t.area<10000));});
-
-// Initial render
-displayTemples(temples);
-
-// Set "Home" as active on page load
-setActiveButton('home');
