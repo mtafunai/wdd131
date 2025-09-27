@@ -22,13 +22,20 @@ nav button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #34495e;
+    background-color: #34495e; /* default color */
     color: white;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 nav button:hover {
     background-color: #1abc9c;
+    transform: scale(1.05);
+}
+
+/* Optional: visually indicate active button */
+nav button.active {
+    background-color: #1abc9c; /* same as hover for consistency */
+    transform: scale(1.05);
 }
 
 #temples-container {
@@ -43,11 +50,12 @@ nav button:hover {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .temple-card:hover {
     transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .temple-card img {
