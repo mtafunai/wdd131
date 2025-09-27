@@ -1,15 +1,16 @@
 const temples = [
-  { templeName: "Aba Nigeria", location: "Aba, Nigeria", dedicated: "2005-08-07", area: 11500, imageUrl: "https://via.placeholder.com/400x250?text=Aba+Nigeria" },
-  { templeName: "Manti Utah", location: "Manti, Utah, United States", dedicated: "1888-05-21", area: 74792, imageUrl: "https://via.placeholder.com/400x250?text=Manti+Utah" },
-  { templeName: "Payson Utah", location: "Payson, Utah, United States", dedicated: "2015-06-07", area: 96630, imageUrl: "https://via.placeholder.com/400x250?text=Payson+Utah" },
-  { templeName: "Yigo Guam", location: "Yigo, Guam", dedicated: "2020-05-02", area: 6861, imageUrl: "https://via.placeholder.com/400x250?text=Yigo+Guam" },
-  { templeName: "Washington D.C.", location: "Kensington, Maryland, United States", dedicated: "1974-11-19", area: 156558, imageUrl: "https://via.placeholder.com/400x250?text=Washington+DC" },
-  { templeName: "Lima Perú", location: "Lima, Perú", dedicated: "1986-01-10", area: 9600, imageUrl: "https://via.placeholder.com/400x250?text=Lima+Peru" },
-  { templeName: "Mexico City Mexico", location: "Mexico City, Mexico", dedicated: "1983-12-02", area: 116642, imageUrl: "https://via.placeholder.com/400x250?text=Mexico+City" },
-  { templeName: "Tokyo Japan", location: "Tokyo, Japan", dedicated: "1980-10-27", area: 68000, imageUrl: "https://via.placeholder.com/400x250?text=Tokyo+Japan" },
-  { templeName: "Rome Italy", location: "Rome, Italy", dedicated: "2019-03-10", area: 9500, imageUrl: "https://via.placeholder.com/400x250?text=Rome+Italy" },
-  { templeName: "Sydney Australia", location: "Sydney, Australia", dedicated: "1984-09-15", area: 97000, imageUrl: "https://via.placeholder.com/400x250?text=Sydney+Australia" }
+  { templeName: "Aba Nigeria", location: "Aba, Nigeria", dedicated: "2005-08-07", area: 11500, imageUrl: "https://churchofjesuschristtemples.org/wp-content/uploads/aba-nigeria-temple.jpg" },
+  { templeName: "Manti Utah", location: "Manti, Utah, United States", dedicated: "1888-05-21", area: 74792, imageUrl: "https://churchofjesuschristtemples.org/wp-content/uploads/manti-utah-temple.jpg" },
+  { templeName: "Payson Utah", location: "Payson, Utah, United States", dedicated: "2015-06-07", area: 96630, imageUrl: "https://churchofjesuschristtemples.org/wp-content/uploads/payson-utah-temple.jpg" },
+  { templeName: "Yigo Guam", location: "Yigo, Guam", dedicated: "2020-05-02", area: 6861, imageUrl: "https://churchofjesuschristtemples.org/wp-content/uploads/yigo-guam-temple.jpg" },
+  { templeName: "Washington D.C.", location: "Kensington, Maryland, United States", dedicated: "1974-11-19", area: 156558, imageUrl: "https://churchofjesuschristtemples.org/wp-content/uploads/washington-dc-temple.jpg" },
+  { templeName: "Lima Perú", location: "Lima, Perú", dedicated: "1986-01-10", area: 9600, imageUrl: "https://churchofjesuschristtemples.org/wp-content/uploads/lima-peru-temple.jpg" },
+  { templeName: "Mexico City Mexico", location: "Mexico City, Mexico", dedicated: "1983-12-02", area: 116642, imageUrl: "https://churchofjesuschristtemples.org/wp-content/uploads/mexico-city-mexico-temple.jpg" },
+  { templeName: "Tokyo Japan", location: "Tokyo, Japan", dedicated: "1980-10-27", area: 68000, imageUrl: "https://churchofjesuschristtemples.org/wp-content/uploads/tokyo-japan-temple.jpg" },
+  { templeName: "Rome Italy", location: "Rome, Italy", dedicated: "2019-03-10", area: 9500, imageUrl: "https://churchofjesuschristtemples.org/wp-content/uploads/rome-italy-temple.jpg" },
+  { templeName: "Sydney Australia", location: "Sydney, Australia", dedicated: "1984-09-15", area: 97000, imageUrl: "https://churchofjesuschristtemples.org/wp-content/uploads/sydney-australia-temple.jpg" }
 ];
+
 
 // Function to display temple cards
 function displayTemples(templesToDisplay) {
