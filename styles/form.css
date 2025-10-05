@@ -1,0 +1,152 @@
+/* Mobile-first styles for a polished form */
+
+/* Basic resets */
+:root{
+  --bg:#f6f8fa;
+  --card:#ffffff;
+  --primary:#0b6efd;
+  --accent:#07a08a;
+  --muted:#666;
+  --text:#1b1b1b;
+  --radius:12px;
+  --max-width:760px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size:16px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#eef3f6);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-bottom:40px;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:20px}
+
+/* Header */
+.site-header{
+  padding:28px 0 8px;
+  text-align:center;
+}
+.site-header h1{margin:.2rem 0;font-size:1.5rem}
+.subtitle{margin:0;color:var(--muted);font-size:0.95rem}
+
+/* Cards */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:0 6px 20px rgba(25,33,44,0.06);
+  padding:18px;
+  margin:12px 0 24px;
+}
+
+/* Form */
+.form-card{padding:18px}
+.form-group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:600}
+.required{color:#c33;margin-left:6px;font-weight:700}
+.muted{color:var(--muted);font-weight:400}
+
+/* Input basics */
+input[type="text"],
+input[type="date"],
+select,
+textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #d6dde6;
+  font-size:1rem;
+  background: #fff;
+  color:var(--text);
+  outline:none;
+}
+input[type="text"]::placeholder,
+textarea::placeholder { color:#9aa6b2; }
+
+textarea { resize:vertical; min-height:110px; }
+
+/* Checkboxes grid */
+.checkbox-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.checkbox-grid input{margin-right:8px}
+.checkbox-grid label{font-weight:500}
+
+/* Actions */
+.form-actions{display:flex;gap:12px;align-items:center}
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid rgba(0,0,0,0.06);
+  background:#fff;
+  color:var(--text);
+}
+.btn.primary, input[type="submit"].btn, input[type="submit"].primary {
+  background:linear-gradient(180deg,var(--primary), #0854d1);
+  color:white;
+  border:none;
+  box-shadow:0 6px 18px rgba(11,110,253,0.12);
+}
+input[type="submit"]{cursor:pointer;font-weight:700;border-radius:10px;padding:10px 14px;border:none}
+
+/* Confirmation card specifics */
+.confirmation-card h2{margin-top:0}
+.summary p{margin:8px 0;color:var(--text)}
+
+/* Footer */
+.site-footer{padding:12px 0;text-align:center;color:var(--muted);font-size:0.9rem}
+
+/* Star rating visuals */
+.rating-fieldset{border:0;padding:0;margin:0}
+.stars{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  user-select:none;
+}
+
+/* Hide radio inputs but keep for accessibility */
+.stars input[type="radio"]{
+  position:absolute;
+  opacity:0;
+  width:0;height:0;
+}
+
+/* Label is the visible star */
+.stars label{
+  font-size:28px;
+  cursor:pointer;
+  transition:transform .12s ease, filter .12s;
+  color: #c9d6e5;
+  display:inline-block;
+}
+.stars label:hover,
+.stars label:focus{
+  transform:translateY(-3px) scale(1.06);
+}
+
+/* filled star style (applies on selection via JS) */
+.stars label.filled{
+  color: #ffb400;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
+}
+
+/* Keyboard focus style for accessibility */
+:focus{outline:3px solid rgba(11,110,253,0.15);outline-offset:3px}
+
+/* Responsive styles */
+@media(min-width:700px){
+  .form-card{padding:26px}
+  .checkbox-grid{grid-template-columns:repeat(3,1fr)}
+  .site-header h1{font-size:1.75rem}
+}
+
+/* Small tweaks */
+.summary .muted{color:var(--muted);font-style:italic}
+.counter{margin-top:12px;padding-top:8px;border-top:1px dashed #e8eef4}

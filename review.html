@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Review Submitted</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Thanks for your review!</h1>
+      <p class="subtitle">Your feedback has been recorded.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card confirmation-card" id="confirmation">
+      <h2>Submission Summary</h2>
+      <div id="summaryContent" aria-live="polite">
+        <!-- Filled by scripts.js -->
+      </div>
+
+      <div class="counter">
+        <p>You have submitted <strong id="reviewCountDisplay">0</strong> review(s) on this device.</p>
+      </div>
+
+      <div class="form-actions">
+        <a href="form.html" class="btn">Write another review</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year2"></span> Product Reviews — Built for W05 Assignment</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+
+    // When the page loads, parse query string, render summary, and increment counter only if
+    // essential fields are present (product and rating).
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const product = params.get('product');
+      const rating = params.get('rating');
+      const installDate = params.get('installDate');
+      const reviewText = params.get('reviewText') || '';
+      const userName = params.get('userName') || '';
+      // features checkboxes: params.getAll returns an array
+      const features = params.getAll('features');
+
+      // Only increment if we have the minimum required bits (product + rating)
+      if (product && rating) {
+        // increment localStorage counter
+        const key = 'reviewCount';
+        let count = parseInt(localStorage.getItem(key) || '0', 10);
+        count = count + 1;
+        localStorage.setItem(key, String(count));
+      }
+
+      // Display the counter (even if zero)
+      const display = document.getElementById('reviewCountDisplay');
+      display.textContent = localStorage.getItem('reviewCount') || '0';
+
+      // Render submission summary; decode product id to show friendly name via products array
+      const prodObj = scripts_findProductById(product);
+
+      const summaryDiv = document.getElementById('summaryContent');
+      const created = document.createElement('div');
+      created.className = 'summary';
+
+      // Build summary HTML
+      const htmlParts = [];
+      htmlParts.push(`<p><strong>Product:</strong> ${prodObj ? escapeHtml(prodObj.name) + ` (${escapeHtml(prodObj.id)})` : escapeHtml(product || '—')}</p>`);
+      htmlParts.push(`<p><strong>Rating:</strong> ${escapeHtml(rating || '—')} / 5</p>`);
+      htmlParts.push(`<p><strong>Date of Installation:</strong> ${escapeHtml(installDate || '—')}</p>`);
+      htmlParts.push(`<p><strong>Useful Features:</strong> ${features.length ? escapeHtml(features.join(', ')) : 'None selected'}</p>`);
+      htmlParts.push(`<p><strong>Review:</strong> ${reviewText ? escapeHtml(reviewText) : '<span class="muted">No written review provided</span>'}</p>`);
+      htmlParts.push(`<p><strong>Reviewer:</strong> ${userName ? escapeHtml(userName) : '<span class="muted">Anonymous</span>'}</p>`);
+
+      created.innerHTML = htmlParts.join('');
+      summaryDiv.appendChild(created);
+
+      // Helper: escape HTML to avoid injection
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+    })();
+  </script>
+</body>
+</html>
