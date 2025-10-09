@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Island Delights</title>
 <link rel="stylesheet" href="styles.css">
+<meta name="description" content="Contact Island Delights Food Truck to send us a message or feedback.">
 </head>
 <body>
 <header>
@@ -20,19 +21,19 @@
 <main>
   <form id="contact-form">
     <label for="name">Name:</label>
-    <input type="text" id="name" required>
+    <input type="text" id="name" name="name" required>
 
     <label for="email">Email:</label>
-    <input type="email" id="email" required>
+    <input type="email" id="email" name="email" required>
 
     <label for="message">Message:</label>
-    <textarea id="message" required></textarea>
+    <textarea id="message" name="message" required></textarea>
 
     <button type="submit">Send</button>
   </form>
 
   <p>Submissions: <span id="submit-count">0</span></p>
-  <div id="form-confirm"></div>
+  <div id="form-confirm" role="status" aria-live="polite"></div>
 </main>
 
 <footer>
