@@ -31,3 +31,8 @@ button:hover {
 section h2 {
     margin-bottom: 1rem;
 }
+.menu-img {
+  width: 200px;
+  height: auto;
+  border: 2px solid red;
+}
