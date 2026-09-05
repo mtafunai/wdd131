@@ -1,0 +1,268 @@
+/* =========================
+General Page Styling
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: #222;
+    background-color: #ffffff;
+}
+
+
+/* =========================
+Header
+========================= */
+
+header {
+    background-color: #24587a;
+    color: white;
+}
+
+#course-title {
+    display: block;
+    text-align: center;
+    padding: 18px 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+/* =========================
+Navigation
+========================= */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #222222;
+}
+
+nav a {
+    flex: 1;
+    padding: 12px 10px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #24587a;
+    color: white;
+}
+
+
+/* =========================
+Main
+========================= */
+
+main {
+    max-width: 960px;
+    margin: 25px auto;
+    padding: 0 10px;
+}
+
+h1 {
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+/* =========================
+Main Grid
+========================= */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    align-items: start;
+}
+
+
+/* =========================
+Cards
+========================= */
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #999999;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card h2 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: #24587a;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+/* =========================
+About Me
+========================= */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    gap: 20px;
+    padding: 15px;
+    align-items: start;
+}
+
+.about-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.profile-image {
+    width: 120px;
+    height: 155px;
+    object-fit: cover;
+}
+
+
+/* =========================Fiji
+========================= */
+
+.card h3 {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0 0 6px;
+    text-align: center;
+    border-bottom: 2px solid #cccccc;
+    font-size: 1rem;
+}
+
+.fiji-content {
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    gap: 20px;
+    padding: 15px;
+    align-items: start;
+}
+
+.flag-image {
+    width: 125px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #999999;
+}
+
+.caption {
+    margin: 5px 0 0;
+    text-align: center;
+    font-size: 0.7rem;
+    font-style: italic;
+}
+
+.fiji-content > p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+
+/* =========================
+Web Development Resources
+========================= */
+
+.resources-card {
+    min-height: 400px;
+}
+
+.resources-card ul {
+    margin: 25px 0;
+    padding-left: 40px;
+}
+
+.resources-card li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.resources-card a {
+    color: #003366;
+    text-decoration: underline;
+}
+
+.resources-card a:hover {
+    color: #24587a;
+}
+
+
+/* =========================
+Footer
+========================= */
+
+footer {
+    margin-top: 20px;
+    padding: 18px 10px;
+    text-align: center;
+    background-color: #24587a;
+    color: white;
+}
+
+footer p {
+    margin: 4px;
+    font-size: 0.85rem;
+}
+
+#lastModified {
+    font-size: 0.75rem;
+}
+
+
+/* =========================
+Mobile
+========================= */
+
+@media screen and (max-width: 700px) {
+
+    #course-title {
+        font-size: 1.15rem;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        width: 100%;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-image {
+        justify-self: center;
+    }
+
+    .fiji-content {
+        grid-template-columns: 1fr;
+    }
+
+    .flag-image {
+        display: block;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WDD 131 – Dynamic Web Fundamentals – Michael Tafunai</title>
+
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals – Michael Tafunai. A course landing page featuring information about me, Fiji, web development resources, and course links.">
+
+    <meta name="author" content="Michael Tafunai">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/base.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/getdates.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <span id="course-title">
+            WDD 131: Dynamic Web Fundamentals
+        </span>
+
+        <nav>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+                LinkedIn
+            </a>
+
+            <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">
+                Canvas
+            </a>
+
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7"
+            target="_blank" rel="noopener">
+                Scripture
+            </a>
+
+            <a href="#">
+                Final Project
+            </a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <h1>Michael Tafunai</h1>
+
+        <div class="main-grid">
+
+            <!-- About Me Card -->
+            <section class="card about-card">
+
+                <h2>About Me</h2>
+
+                <div class="about-content">
+
+                    <p>
+                        My name is Michael Tafunai. I am from Fiji and I am
+                        currently studying web development. I enjoy learning
+                        about technology and developing new skills in HTML,
+                        CSS, and JavaScript.
+                    </p>
+
+                    <img src="images/profile.jpg"
+                        alt="Photo of Michael Tafunai"
+                        class="profile-image">
+
+                </div>
+
+                <h3>Fiji</h3>
+
+                <div class="fiji-content">
+
+                    <div>
+                        <img src="images/fijiflag.jpg"
+                            alt="Flag of Fiji"
+                            class="flag-image">
+
+                        <p class="caption">
+                            Official Flag of Fiji
+                        </p>
+                    </div>
+
+                    <p>
+                        Fiji is an island country in the South Pacific Ocean.
+                        It is made up of more than 300 islands and is known
+                        for its beautiful beaches, tropical climate, coral
+                        reefs, and friendly people. Fiji is a multicultural
+                        country with a rich history and beautiful natural
+                        surroundings.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Web Development Resources Card -->
+            <section class="card resources-card">
+
+                <h2>Web Dev Resources</h2>
+
+                <ul>
+                    <li>
+                        <a href="https://developer.mozilla.org/"
+                        target="_blank" rel="noopener">
+                            MDN Web Docs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.w3schools.com/"
+                        target="_blank" rel="noopener">
+                            W3Schools
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://css-tricks.com/"
+                        target="_blank" rel="noopener">
+                            CSS-Tricks
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://web.dev/"
+                        target="_blank" rel="noopener">
+                            web.dev
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://validator.w3.org/"
+                        target="_blank" rel="noopener">
+                            W3C Validator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.freecodecamp.org/"
+                        target="_blank" rel="noopener">
+                            freeCodeCamp
+                        </a>
+                    </li>
+                </ul>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy;
+            <span id="currentyear"></span>
+            🌺 Michael Tafunai 🌺 Fiji
+        </p>
+
+        <p id="lastModified"></p>
+
+    </footer>
+
+</body>
+</html>
