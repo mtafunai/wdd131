@@ -1,0 +1,66 @@
+
+@media screen and (min-width: 700px) 
+
+{
+
+    .header-content {
+        justify-content: center;
+        padding: 1.5rem;
+    }
+
+    .site-title {
+        font-size: 2rem;
+    }
+
+    /* Hide hamburger on larger screens */
+    #menu-button {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav a {
+        min-width: 120px;
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: center;
+    }
+
+    nav a:last-child {
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+
+    main {
+        max-width: 1200px;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+
+    .temple-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    figure {
+        transition: transform 0.2s ease;
+    }
+
+    figure:hover {
+        transform: translateY(-4px);
+    }
+
+
+    footer {
+        margin-top: 3rem;
+    }
+}
