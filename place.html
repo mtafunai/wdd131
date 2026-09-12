@@ -21,27 +21,24 @@
 </head>
 
 <body>
+
     <header class="site-header">
         <h1>Fiji</h1>
     </header>
 
     <main>
+
+        
         <section class="hero">
-            <picture>
-                <source
-                    media="(min-width: 700px)"
-                    srcset="images/fiji-large.jpg">
-
-                <source
-                    media="(max-width: 699px)"
-                    srcset="images/fiji-small.jpg">
-
-                <img
-                    src="images/fiji-large.jpg"
-                    alt="Beautiful tropical coastline in Fiji"
-                    width="1200"
-                    height="675">
-            </picture>
+            <img
+                src="images/fiji-small.webp"
+                srcset="
+                    images/fiji-small.webp 700w,
+                    images/fiji-large.webp 1200w"
+                sizes="(max-width: 699px) 100vw, 1160px"
+                alt="Beautiful tropical coastline in Fiji"
+                width="1200"
+                height="675">
         </section>
 
         <div class="content-wrapper">
@@ -92,9 +89,12 @@
                 </dl>
             </section>
 
+
+    
             <section class="card weather-card">
                 <h2>Weather</h2>
 
+                
                 <div class="weather-icon-mobile">
                     <img
                         src="images/weather.svg"
@@ -104,6 +104,7 @@
                 </div>
 
                 <div class="weather-information">
+
                     <p>
                         <span class="label">Temperature:</span>
                         <span id="temperature">10 °C</span>
@@ -123,21 +124,28 @@
                         <span class="label">Wind Chill:</span>
                         <span id="wind-chill">N/A</span>
                     </p>
+
                 </div>
             </section>
 
         </div>
+
     </main>
 
+
     <footer class="site-footer">
+
         <p>
-            &copy; <span id="currentyear"></span> Michael Tafunai | Fiji
+            &copy; <span id="currentyear"></span>
+            Michael Tafunai | Fiji
         </p>
 
         <p>
             Last Modified:
             <span id="lastModified"></span>
         </p>
+
     </footer>
+
 </body>
 </html>
