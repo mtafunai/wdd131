@@ -9,7 +9,7 @@ body {
     background-color: #f4f1ea;
 }
 
-/* Header */
+
 header {
     background-color: #174a5b;
     color: white;
@@ -30,7 +30,7 @@ header {
     font-size: 1.6rem;
 }
 
-/* Menu Button */
+
 #menu-button {
     border: none;
     background: transparent;
@@ -39,7 +39,7 @@ header {
     cursor: pointer;
 }
 
-/* Navigation */
+
 nav {
     display: none;
     flex-direction: column;
@@ -64,7 +64,7 @@ nav a:hover {
     background-color: #24677d;
 }
 
-/* Main */
+
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -78,14 +78,14 @@ main h2 {
     margin-bottom: 1.5rem;
 }
 
-/* Temple Grid */
+
 .temple-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
-/* Temple Card */
+
 .temple-card {
     background-color: white;
     padding: 1rem;
@@ -114,7 +114,7 @@ main h2 {
     border-radius: 5px;
 }
 
-/* Footer */
+
 footer {
     margin-top: 2rem;
     padding: 1.5rem;
@@ -127,7 +127,7 @@ footer p {
     margin: 0.4rem;
 }
 
-/* Larger Screens */
+
 @media screen and (min-width: 700px) {
 
     #menu-button {
