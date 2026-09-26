@@ -1,4 +1,3 @@
-
 const temples = [
     {
         templeName: "Aba Nigeria",
@@ -6,7 +5,7 @@ const temples = [
         dedicated: "2005, August, 7",
         area: 11500,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/aba-nigeria-temple/aba-nigeria-temple-4771-main.jpg"
     },
     {
         templeName: "Manti Utah",
@@ -14,7 +13,7 @@ const temples = [
         dedicated: "1888, May, 21",
         area: 74792,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/manti-utah-temple/manti-utah-temple-516-main.jpg"
     },
     {
         templeName: "Payson Utah",
@@ -22,7 +21,7 @@ const temples = [
         dedicated: "2015, June, 7",
         area: 96630,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/payson-utah-temple/payson-utah-temple-1403-main.jpg"
     },
     {
         templeName: "Yigo Guam",
@@ -30,7 +29,7 @@ const temples = [
         dedicated: "2020, May, 2",
         area: 6861,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/yigo-guam-temple/yigo-guam-temple-182-main.jpg"
     },
     {
         templeName: "Washington D.C.",
@@ -38,7 +37,7 @@ const temples = [
         dedicated: "1974, November, 19",
         area: 156558,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/washington-dc-temple/washington-dc-temple-458-main.jpg"
     },
     {
         templeName: "Lima Perú",
@@ -46,7 +45,7 @@ const temples = [
         dedicated: "1986, January, 10",
         area: 9600,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/lima-peru-temple/lima-peru-temple-367-main.jpg"
     },
     {
         templeName: "Mexico City Mexico",
@@ -54,17 +53,15 @@ const temples = [
         dedicated: "1983, December, 2",
         area: 116642,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/mexico-city-mexico-temple/mexico-city-mexico-temple-134-main.jpg"
     },
-
-    // Additional temples
     {
         templeName: "Salt Lake Utah",
         location: "Salt Lake City, Utah, United States",
         dedicated: "1893, April, 6",
         area: 253015,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/400x250/salt-lake-temple-76506-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-1-main.jpg"
     },
     {
         templeName: "Laie Hawaii",
@@ -72,7 +69,7 @@ const temples = [
         dedicated: "1919, November, 27",
         area: 42100,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/laie-hawaii/400x250/laie-hawaii-temple-105631-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/laie-hawaii-temple/laie-hawaii-temple-1-main.jpg"
     },
     {
         templeName: "Fiji Suva",
@@ -80,18 +77,20 @@ const temples = [
         dedicated: "2000, June, 18",
         area: 12985,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/suva-fiji/400x250/suva-fiji-temple-lds-378727-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/suva-fiji-temple/suva-fiji-temple-1-main.jpg"
     }
 ];
 
 const container = document.querySelector("#temple-container");
 const navLinks = document.querySelectorAll("nav a");
+const menuButton = document.querySelector("#menu-button");
+const navigation = document.querySelector("#navigation");
+
 
 function displayTemples(filteredTemples) {
     container.innerHTML = "";
 
     filteredTemples.forEach((temple) => {
-
         const card = document.createElement("article");
         card.classList.add("temple-card");
 
@@ -108,9 +107,22 @@ function displayTemples(filteredTemples) {
         area.innerHTML = `<strong>Area:</strong> ${temple.area.toLocaleString()} sq ft`;
 
         const image = document.createElement("img");
+
         image.src = temple.imageUrl;
         image.alt = `${temple.templeName} temple`;
         image.loading = "lazy";
+
+        // Display a message if an image cannot be loaded
+        image.addEventListener("error", () => {
+            image.alt = `Image unavailable for ${temple.templeName}`;
+            image.style.display = "none";
+
+            const message = document.createElement("p");
+            message.textContent = "Temple image could not be loaded.";
+            message.classList.add("image-error");
+
+            card.appendChild(message);
+        });
 
         card.appendChild(name);
         card.appendChild(location);
@@ -124,7 +136,6 @@ function displayTemples(filteredTemples) {
 
 
 function filterTemples(filter) {
-
     let filteredTemples = temples;
 
     if (filter === "old") {
@@ -165,16 +176,19 @@ navLinks.forEach((link) => {
 
         filterTemples(filter);
 
-    
         navigation.classList.remove("open");
+
         menuButton.textContent = "☰";
+
         menuButton.setAttribute("aria-expanded", "false");
+
+        menuButton.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
     });
 });
 
-
-const menuButton = document.querySelector("#menu-button");
-const navigation = document.querySelector("#navigation");
 
 menuButton.addEventListener("click", () => {
     navigation.classList.toggle("open");
@@ -182,19 +196,23 @@ menuButton.addEventListener("click", () => {
     const isOpen = navigation.classList.contains("open");
 
     menuButton.textContent = isOpen ? "✕" : "☰";
+
     menuButton.setAttribute("aria-expanded", isOpen);
+
     menuButton.setAttribute(
         "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
+        isOpen
+            ? "Close navigation menu"
+            : "Open navigation menu"
     );
 });
 
-/* Footer */
+
 document.querySelector("#currentyear").textContent =
     new Date().getFullYear();
 
 document.querySelector("#lastModified").textContent =
     `Last Modification: ${document.lastModified}`;
 
-/* Display all temples when page loads */
+
 displayTemples(temples);
