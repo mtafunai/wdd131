@@ -63,7 +63,7 @@ const temples = [
         dedicated: "1893, April, 6",
         area: 253015,
         imageUrl:
-            "https://www.churchofjesuschrist.org/media/image/salt-lake-temple-c8f9e39?lang=eng"
+            "https://churchofjesuschristtemples.org/salt-lake-temple/photographs/#Construction-19"
     },
     {
         templeName: "Laie Hawaii",
@@ -71,7 +71,7 @@ const temples = [
         dedicated: "1919, November, 27",
         area: 42100,
         imageUrl:
-            "https://www.churchofjesuschrist.org/media/image/hawaii-temple-38a8c5a?lang=eng"
+            "https://churchofjesuschristtemples.org/laie-hawaii-temple/photographs/#Official-14"
     },
     {
         templeName: "Fiji Suva",
@@ -79,7 +79,7 @@ const temples = [
         dedicated: "2000, June, 18",
         area: 12985,
         imageUrl:
-            "https://churchofjesuschristtemples.org/assets/img/temples/suva-fiji-temple/suva-fiji-temple-11180-main.jpg"
+            "https://churchofjesuschristtemples.org/suva-fiji-temple/photographs/#Official-8"
     }
 ];
 
