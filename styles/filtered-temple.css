@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    color: #222;
+    background-color: #f4f1ea;
+}
+
+/* Header */
+header {
+    background-color: #174a5b;
+    color: white;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-title {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+}
+
+/* Menu Button */
+#menu-button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Navigation */
+nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #103746;
+}
+
+nav.open {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+nav a:hover {
+    background-color: #24677d;
+}
+
+/* Main */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+main h2 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Temple Grid */
+.temple-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Temple Card */
+.temple-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.temple-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+}
+
+.temple-card p {
+    margin: 0.4rem 0;
+    line-height: 1.5;
+}
+
+.temple-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #174a5b;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 0.4rem;
+}
+
+/* Larger Screens */
+@media screen and (min-width: 700px) {
+
+    #menu-button {
+        display: none;
+    }
+
+    .header-content {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .site-title {
+        margin-bottom: 0.75rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: transparent;
+        width: auto;
+    }
+
+    nav a {
+        border: none;
+        padding: 0.75rem 1.25rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    main h2 {
+        font-size: 2.5rem;
+    }
+
+    .temple-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .temple-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
