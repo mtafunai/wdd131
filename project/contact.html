@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Fiji Explorer to share questions, feedback, and interests about exploring Fiji.">
+    <meta name="author" content="Michael Tafunai">
+    <title>Fiji Explorer | Contact</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/project.css">
+    <script src="scripts/project.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="logo" href="index.html" aria-label="Fiji Explorer home">
+                <span aria-hidden="true">🌴</span> Fiji Explorer
+            </a>
+
+            <button class="menu-button" id="menu-button" type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="site-nav">
+                ☰
+            </button>
+
+            <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="activities.html">Activities</a>
+                <a class="active" href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div>
+                <p class="eyebrow">Connect with Fiji Explorer</p>
+                <h1>Contact Us</h1>
+                <p>
+                    Have a question or want to share your Fiji travel interests?
+                    Send us a message using the form below.
+                </p>
+            </div>
+        </section>
+
+        <section class="section contact-section" aria-labelledby="contact-heading">
+            <div class="contact-intro">
+                <p class="eyebrow">Let's connect</p>
+                <h2 id="contact-heading">Tell Us About Your Fiji Plans</h2>
+                <p>
+                    Your information helps us understand what visitors want
+                    to discover about Fiji.
+                </p>
+
+                <div class="info-box">
+                    <h3>What can you ask about?</h3>
+                    <ul>
+                        <li>Destinations</li>
+                        <li>Beaches and islands</li>
+                        <li>Outdoor activities</li>
+                        <li>Cultural experiences</li>
+                        <li>Website feedback</li>
+                    </ul>
+                </div>
+            </div>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="visitor-name">Name</label>
+                    <input
+                        type="text"
+                        id="visitor-name"
+                        name="visitor-name"
+                        autocomplete="name"
+                        required
+                        minlength="2">
+                </div>
+
+                <div class="form-group">
+                    <label for="visitor-email">Email address</label>
+                    <input
+                        type="email"
+                        id="visitor-email"
+                        name="visitor-email"
+                        autocomplete="email"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="visitor-interest">What interests you most?</label>
+                    <select id="visitor-interest" name="visitor-interest" required>
+                        <option value="">Select an option</option>
+                        <option value="destinations">Destinations</option>
+                        <option value="beaches">Beaches and islands</option>
+                        <option value="activities">Outdoor activities</option>
+                        <option value="culture">Culture</option>
+                        <option value="general">General information</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="visitor-message">Message</label>
+                    <textarea
+                        id="visitor-message"
+                        name="visitor-message"
+                        rows="6"
+                        minlength="10"
+                        required></textarea>
+                </div>
+
+                <label class="checkbox-label">
+                    <input
+                        type="checkbox"
+                        id="save-preference"
+                        name="save-preference">
+                    Remember my name and interest on this browser
+                </label>
+
+                <button class="button button-primary" type="submit">Send Message</button>
+
+                <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <p class="footer-logo">🌴 Fiji Explorer</p>
+                <p>Discover Fiji. Explore more.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="references.html">References</a>
+            </div>
+
+            <p>&copy; <span id="current-year">2026</span> Fiji Explorer. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

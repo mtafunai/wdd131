@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Fiji destinations including Suva, Nadi, the Coral Coast, Yasawa Islands, Denarau, and Taveuni.">
+    <meta name="author" content="Michael Tafunai">
+    <title>Fiji Explorer | Destinations</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/project.css">
+    <script src="scripts/project.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="logo" href="index.html" aria-label="Fiji Explorer home">
+                <span aria-hidden="true">🌴</span> Fiji Explorer
+            </a>
+
+            <button class="menu-button" id="menu-button" type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="site-nav">
+                ☰
+            </button>
+
+            <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a class="active" href="destinations.html">Destinations</a>
+                <a href="activities.html">Activities</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div>
+                <p class="eyebrow">Explore the islands</p>
+                <h1>Fiji Destinations</h1>
+                <p>
+                    Explore destinations across Fiji and discover what makes
+                    each place special.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="destination-list-heading">
+            <div class="section-heading">
+                <p class="eyebrow">Find your destination</p>
+                <h2 id="destination-list-heading">Places to Explore</h2>
+                <p>
+                    Use the filter to explore destinations by type.
+                </p>
+            </div>
+
+            <div class="filter-area">
+                <label for="destination-filter">Filter destinations</label>
+                <select id="destination-filter">
+                    <option value="all">All destinations</option>
+                    <option value="city">Cities</option>
+                    <option value="beach">Beaches & islands</option>
+                    <option value="nature">Nature</option>
+                    <option value="culture">Culture</option>
+                </select>
+            </div>
+
+            <div class="card-grid" id="destination-list">
+                <!-- JavaScript generates destination cards here. -->
+            </div>
+
+            <p class="empty-message" id="destination-message" hidden>
+                No destinations match that category.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <p class="footer-logo">🌴 Fiji Explorer</p>
+                <p>Discover Fiji. Explore more.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="references.html">References</a>
+            </div>
+
+            <p>&copy; <span id="current-year">2026</span> Fiji Explorer. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
