@@ -3,101 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Fiji destinations including Suva, Nadi, the Coral Coast, Yasawa Islands, Denarau, and Taveuni.">
+
+    <meta
+        name="description"
+        content="Explore popular destinations in Fiji including Suva, Nadi, Coral Coast, Yasawa Islands, Denarau Island, and Taveuni."
+    >
+
     <meta name="author" content="Michael Tafunai">
-    <title>Fiji Explorer | Destinations</title>
+
+    <title>Destinations | Fiji Explorer</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="styles/project.css">
+
     <script src="scripts/project.js" defer></script>
 </head>
 
 <body>
+
     <header class="site-header">
-        <div class="header-inner">
-            <a class="logo" href="siteplans.html" aria-label="Fiji Explorer home">
-                <span aria-hidden="true">🌴</span> Fiji Explorer
+        <div class="header-content">
+
+            <a class="site-title" href="siteplans.html">
+                🌴 Fiji Explorer
             </a>
 
-            <button class="menu-button" id="menu-button" type="button"
-                aria-label="Open navigation menu"
+            <button
+                id="menu-button"
+                class="menu-button"
+                type="button"
+                aria-label="Open navigation"
                 aria-expanded="false"
-                aria-controls="site-nav">
+                aria-controls="navigation"
+            >
                 ☰
             </button>
 
-            <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+            <nav id="navigation" aria-label="Main navigation">
                 <a href="siteplans.html">Home</a>
-                <a class="active" href="destinations.html">Destinations</a>
+                <a href="destinations.html">Destinations</a>
                 <a href="activities.html">Activities</a>
                 <a href="contact.html">Contact</a>
             </nav>
+
         </div>
     </header>
 
     <main>
+
         <section class="page-banner">
-            <div>
-                <p class="eyebrow">Explore the islands</p>
-                <h1>Fiji Destinations</h1>
+            <div class="container">
+                <p class="eyebrow">Discover Fiji</p>
+                <h1>Destinations</h1>
                 <p>
-                    Explore destinations across Fiji and discover what makes
-                    each place special.
+                    Explore cities, beaches, islands, resorts, and natural
+                    attractions across Fiji.
                 </p>
             </div>
         </section>
 
-        <section class="section" aria-labelledby="destination-list-heading">
-            <div class="section-heading">
-                <p class="eyebrow">Find your destination</p>
-                <h2 id="destination-list-heading">Places to Explore</h2>
-                <p>
-                    Use the filter to explore destinations by type.
-                </p>
-            </div>
+        <section class="content-section">
+            <div class="container">
 
-            <div class="filter-area">
-                <label for="destination-filter">Filter destinations</label>
-                <select id="destination-filter">
-                    <option value="all">All destinations</option>
-                    <option value="city">Cities</option>
-                    <option value="beach">Beaches & islands</option>
-                    <option value="nature">Nature</option>
-                    <option value="culture">Culture</option>
-                </select>
-            </div>
+                <div class="section-heading">
+                    <p class="eyebrow">Choose a destination</p>
+                    <h2>Explore Fiji</h2>
+                    <p>
+                        Select a category or choose a destination from the
+                        Explore links throughout the site.
+                    </p>
+                </div>
 
-            <div class="card-grid" id="destination-list">
-                
-            </div>
+                <div class="filter-area">
+                    <label for="destination-filter">
+                        Filter destinations:
+                    </label>
 
-            <p class="empty-message" id="destination-message" hidden>
-                No destinations match that category.
-            </p>
+                    <select id="destination-filter">
+                        <option value="all">All Destinations</option>
+                        <option value="city">Cities</option>
+                        <option value="beach">Beaches &amp; Islands</option>
+                        <option value="nature">Nature</option>
+                        <option value="culture">Culture</option>
+                    </select>
+                </div>
+
+                <p
+                    id="destination-message"
+                    class="filter-message"
+                    aria-live="polite"
+                ></p>
+
+                <div
+                    id="destination-list"
+                    class="card-grid destination-grid"
+                >
+                </div>
+
+            </div>
         </section>
+
+        <section class="callout-section">
+            <div class="container callout-content">
+                <div>
+                    <p class="eyebrow">Plan your visit</p>
+                    <h2>Ready to explore Fiji?</h2>
+                    <p>
+                        Discover activities, beaches, cultural experiences,
+                        and natural attractions for your next Fiji adventure.
+                    </p>
+                </div>
+
+                <a class="button secondary-button" href="activities.html">
+                    Explore Activities
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <footer class="site-footer">
-        <div class="footer-inner">
+        <div class="container footer-content">
+
             <div>
                 <p class="footer-logo">🌴 Fiji Explorer</p>
-                <p>Discover Fiji. Explore more.</p>
+
+                <p>
+                    Explore Fiji's destinations, beaches, activities,
+                    culture, and natural beauty.
+                </p>
             </div>
 
-            <div class="footer-links">
-                <a href="references.html">References</a>
+            <div>
+                <h2>Explore</h2>
+
+                <ul class="footer-links">
+                    <li>
+                        <a href="siteplans.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="destinations.html">Destinations</a>
+                    </li>
+                    <li>
+                        <a href="activities.html">Activities</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="references.html">References</a>
+                    </li>
+                </ul>
             </div>
 
+        </div>
+
+        <div class="footer-bottom container">
             <p>
-                &copy; <span id="current-year">2026</span> Fiji Explorer |
+                &copy;
+                <span id="current-year">2026</span>
+                Fiji Explorer |
                 Michael Tafunai |
                 <span id="current-date"></span> |
                 <span id="current-time"></span>
             </p>
         </div>
     </footer>
+
 </body>
 </html>

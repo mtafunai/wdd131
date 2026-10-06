@@ -4,48 +4,60 @@ const destinations = [
         island: "Viti Levu",
         type: "City",
         category: "city",
-        description: "Explore Fiji's capital city with museums, markets, gardens, restaurants, and waterfront views.",
-        image: "https://images.unsplash.com/photo-1589979481223-deb893043163?auto=format&fit=crop&w=900&q=80"
+        description:
+            "Explore Fiji's capital city with museums, markets, gardens, restaurants, and waterfront views.",
+        image:
+            "https://images.unsplash.com/photo-1589979481223-deb893043163?auto=format&fit=crop&w=900&q=80"
     },
     {
         name: "Nadi",
         island: "Viti Levu",
         type: "City",
         category: "city",
-        description: "Discover a lively gateway to Fiji with local markets, temples, restaurants, and nearby attractions.",
-        image: "https://images.unsplash.com/photo-1596395819057-e37f55a8516a?auto=format&fit=crop&w=900&q=80"
+        description:
+            "Discover a lively gateway to Fiji with local markets, temples, restaurants, and nearby attractions.",
+        image:
+            "https://images.unsplash.com/photo-1596395819057-e37f55a8516a?auto=format&fit=crop&w=900&q=80"
     },
     {
         name: "Coral Coast",
         island: "Viti Levu",
         type: "Beach",
         category: "beach",
-        description: "Enjoy beautiful beaches, coral reefs, coastal villages, and scenic ocean views along Fiji's southern coast.",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+        description:
+            "Enjoy beautiful beaches, coral reefs, coastal villages, and scenic ocean views along Fiji's southern coast.",
+        image:
+            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
     },
     {
         name: "Yasawa Islands",
         island: "Yasawa Group",
         type: "Beach",
         category: "beach",
-        description: "Relax on tropical beaches and experience clear blue water, island villages, and unforgettable sunsets.",
-        image: "https://images.unsplash.com/photo-1544550285-f813152fb2fd?auto=format&fit=crop&w=900&q=80"
+        description:
+            "Relax on tropical beaches and experience clear blue water, island villages, and unforgettable sunsets.",
+        image:
+            "https://images.unsplash.com/photo-1544550285-f813152fb2fd?auto=format&fit=crop&w=900&q=80"
     },
     {
         name: "Denarau Island",
         island: "Viti Levu",
         type: "Resort",
         category: "beach",
-        description: "Enjoy resorts, beaches, golf, restaurants, and easy access to many popular island activities.",
-        image: "https://images.unsplash.com/photo-1505881502353-a1986add3762?auto=format&fit=crop&w=900&q=80"
+        description:
+            "Enjoy resorts, beaches, golf, restaurants, and easy access to many popular island activities.",
+        image:
+            "https://images.unsplash.com/photo-1505881502353-a1986add3762?auto=format&fit=crop&w=900&q=80"
     },
     {
         name: "Taveuni",
         island: "Vanua Levu",
         type: "Nature",
         category: "nature",
-        description: "Discover waterfalls, rainforest, hiking trails, and spectacular natural scenery on Fiji's Garden Island.",
-        image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80"
+        description:
+            "Discover waterfalls, rainforest, hiking trails, and spectacular natural scenery on Fiji's Garden Island.",
+        image:
+            "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80"
     }
 ];
 
@@ -54,56 +66,64 @@ const activities = [
         name: "Snorkeling",
         type: "Water",
         icon: "🤿",
-        description: "Explore Fiji's colourful coral reefs and discover tropical fish in clear warm waters.",
+        description:
+            "Explore Fiji's colourful coral reefs and discover tropical fish in clear warm waters.",
         location: "Coral Coast and Yasawa Islands"
     },
     {
         name: "Scuba Diving",
         type: "Water",
         icon: "🐠",
-        description: "Experience Fiji's famous underwater world with coral reefs, marine life, and dramatic dive sites.",
+        description:
+            "Experience Fiji's famous underwater world with coral reefs, marine life, and dramatic dive sites.",
         location: "Taveuni and surrounding islands"
     },
     {
         name: "Kayaking",
         type: "Water",
         icon: "🛶",
-        description: "Paddle through calm coastal waters, lagoons, and island channels while enjoying tropical scenery.",
+        description:
+            "Paddle through calm coastal waters, lagoons, and island channels while enjoying tropical scenery.",
         location: "Yasawa Islands"
     },
     {
         name: "Hiking",
         type: "Nature",
         icon: "🥾",
-        description: "Walk through tropical forests and discover viewpoints, waterfalls, and beautiful natural landscapes.",
+        description:
+            "Walk through tropical forests and discover viewpoints, waterfalls, and beautiful natural landscapes.",
         location: "Taveuni and Viti Levu"
     },
     {
         name: "Waterfalls",
         type: "Nature",
         icon: "💧",
-        description: "Visit refreshing waterfalls surrounded by lush rainforest and tropical vegetation.",
+        description:
+            "Visit refreshing waterfalls surrounded by lush rainforest and tropical vegetation.",
         location: "Taveuni and Vanua Levu"
     },
     {
         name: "Village Experiences",
         type: "Culture",
         icon: "🏝️",
-        description: "Learn about Fijian traditions, community life, crafts, ceremonies, and local customs.",
+        description:
+            "Learn about Fijian traditions, community life, crafts, ceremonies, and local customs.",
         location: "Fijian villages"
     },
     {
         name: "Local Food",
         type: "Culture",
         icon: "🍽️",
-        description: "Taste traditional Fijian dishes and experience the flavours of fresh local ingredients.",
+        description:
+            "Taste traditional Fijian dishes and experience the flavours of fresh local ingredients.",
         location: "Markets and local communities"
     },
     {
         name: "Beach Relaxation",
         type: "Relaxation",
         icon: "🌴",
-        description: "Relax on beautiful beaches, enjoy the sunshine, and take in Fiji's peaceful island atmosphere.",
+        description:
+            "Relax on beautiful beaches, enjoy the sunshine, and take in Fiji's peaceful island atmosphere.",
         location: "Fiji's islands and coastline"
     }
 ];
@@ -143,7 +163,6 @@ function setupNavigation() {
         });
     });
 }
-
 
 
 function updateYear() {
@@ -191,11 +210,21 @@ function createDestinationCard(destination) {
                 height="600"
                 loading="lazy"
             >
+
             <div class="card-content">
-                <p class="card-label">${destination.type} • ${destination.island}</p>
+                <p class="card-label">
+                    ${destination.type} • ${destination.island}
+                </p>
+
                 <h3>${destination.name}</h3>
+
                 <p>${destination.description}</p>
-                <a class="text-link" href="destinations.html">
+
+                <a
+                    class="text-link"
+                    href="destinations.html?place=${encodeURIComponent(destination.name)}"
+                    aria-label="Explore ${destination.name}"
+                >
                     Explore ${destination.name}
                 </a>
             </div>
@@ -203,8 +232,12 @@ function createDestinationCard(destination) {
     `;
 }
 
+
+
 function displayFeaturedDestinations() {
-    const destinationContainer = document.querySelector("#featured-destinations");
+    const destinationContainer = document.querySelector(
+        "#featured-destinations"
+    );
 
     if (!destinationContainer) {
         return;
@@ -217,8 +250,13 @@ function displayFeaturedDestinations() {
         .join("");
 }
 
+
+
 function displayDestinations(filter = "all") {
-    const destinationContainer = document.querySelector("#destination-list");
+    const destinationContainer = document.querySelector(
+        "#destination-list"
+    );
+
     const message = document.querySelector("#destination-message");
 
     if (!destinationContainer) {
@@ -254,6 +292,49 @@ function displayDestinations(filter = "all") {
 
 
 
+function displaySelectedDestination(destinationName) {
+    const destinationContainer = document.querySelector(
+        "#destination-list"
+    );
+
+    const message = document.querySelector("#destination-message");
+
+    if (!destinationContainer || !destinationName) {
+        return;
+    }
+
+    const selectedDestination = destinations.find(
+        (destination) =>
+            destination.name.toLowerCase() ===
+            destinationName.toLowerCase()
+    );
+
+    if (!selectedDestination) {
+        if (message) {
+            message.textContent =
+                "Sorry, that destination could not be found.";
+        }
+
+        displayDestinations();
+        return;
+    }
+
+    destinationContainer.innerHTML =
+        createDestinationCard(selectedDestination);
+
+    if (message) {
+        message.textContent = "";
+    }
+
+    const filter = document.querySelector("#destination-filter");
+
+    if (filter) {
+        filter.value = "all";
+    }
+}
+
+
+
 function setupDestinationFilter() {
     const filter = document.querySelector("#destination-filter");
 
@@ -274,15 +355,24 @@ function createActivityCard(activity) {
             <div class="activity-icon" aria-hidden="true">
                 ${activity.icon}
             </div>
+
             <div class="card-content">
                 <p class="card-label">${activity.type}</p>
+
                 <h3>${activity.name}</h3>
+
                 <p>${activity.description}</p>
-                <p><strong>Where:</strong> ${activity.location}</p>
+
+                <p>
+                    <strong>Where:</strong>
+                    ${activity.location}
+                </p>
             </div>
         </article>
     `;
 }
+
+
 
 function displayActivities(filter = "all") {
     const activityContainer = document.querySelector("#activity-list");
@@ -297,7 +387,8 @@ function displayActivities(filter = "all") {
             ? activities
             : activities.filter(
                 (activity) =>
-                    activity.type.toLowerCase() === filter.toLowerCase()
+                    activity.type.toLowerCase() ===
+                    filter.toLowerCase()
             );
 
     if (filteredActivities.length === 0) {
@@ -393,7 +484,8 @@ function setupContactForm() {
         const emailInput = document.querySelector("#email");
         const interestSelect = document.querySelector("#interest");
         const messageInput = document.querySelector("#message");
-        const savePreference = document.querySelector("#save-preference");
+        const savePreference =
+            document.querySelector("#save-preference");
         const formMessage = document.querySelector("#form-message");
 
         const name = nameInput.value.trim();
@@ -428,14 +520,26 @@ function setupContactForm() {
 }
 
 
+
 function initializeSite() {
     setupNavigation();
     updateYear();
     updateDateTime();
+
     displayFeaturedDestinations();
-    displayDestinations();
-    displayActivities();
+
+    
+    const pageParams = new URLSearchParams(window.location.search);
+    const selectedPlace = pageParams.get("place");
+
+    if (selectedPlace) {
+        displaySelectedDestination(selectedPlace);
+    } else {
+        displayDestinations();
+    }
+
     setupDestinationFilter();
+    displayActivities();
     setupActivityFilter();
     setupContactForm();
 }
