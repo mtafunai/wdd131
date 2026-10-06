@@ -17,7 +17,7 @@ const destinations = [
         description:
             "Discover a lively gateway to Fiji with local markets, temples, restaurants, and nearby attractions.",
         image:
-            "https://images.unsplash.com/photo-1596395819057-e37f55a8516a?auto=format&fit=crop&w=900&q=80"
+            "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
     },
     {
         name: "Coral Coast",
@@ -128,11 +128,9 @@ const activities = [
     }
 ];
 
-
-
 function setupNavigation() {
     const menuButton = document.querySelector("#menu-button");
-    const navigation = document.querySelector("#navigation");
+    const navigation = document.querySelector("#site-nav");
 
     if (!menuButton || !navigation) {
         return;
@@ -164,8 +162,6 @@ function setupNavigation() {
     });
 }
 
-
-
 function updateYear() {
     const yearElement = document.querySelector("#current-year");
 
@@ -173,7 +169,6 @@ function updateYear() {
         yearElement.textContent = new Date().getFullYear();
     }
 }
-
 
 function updateDateTime() {
     const dateElement = document.querySelector("#current-date");
@@ -197,7 +192,6 @@ function updateDateTime() {
         second: "2-digit"
     });
 }
-
 
 
 function createDestinationCard(destination) {
@@ -231,7 +225,6 @@ function createDestinationCard(destination) {
         </article>
     `;
 }
-
 
 
 function displayFeaturedDestinations() {
@@ -528,11 +521,6 @@ function initializeSite() {
 
     displayFeaturedDestinations();
 
-    /*
-     * Check whether the URL contains a specific destination.
-     * Example:
-     * destinations.html?place=Suva
-     */
     const pageParams = new URLSearchParams(window.location.search);
     const selectedPlace = pageParams.get("place");
 
