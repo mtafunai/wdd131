@@ -1,460 +1,551 @@
-* {
-    box-sizing: border-box;
+const destinations = [
+    {
+        name: "Suva",
+        island: "Viti Levu",
+        type: "City",
+        category: "city",
+        description:
+            "Explore Fiji's capital city with museums, markets, gardens, restaurants, and waterfront views.",
+        image:
+            "https://images.unsplash.com/photo-1589979481223-deb893043163?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+        name: "Nadi",
+        island: "Viti Levu",
+        type: "City",
+        category: "city",
+        description:
+            "Discover a lively gateway to Fiji with local markets, temples, restaurants, and nearby attractions.",
+        image:
+            "https://images.unsplash.com/photo-1596395819057-e37f55a8516a?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+        name: "Coral Coast",
+        island: "Viti Levu",
+        type: "Beach",
+        category: "beach",
+        description:
+            "Enjoy beautiful beaches, coral reefs, coastal villages, and scenic ocean views along Fiji's southern coast.",
+        image:
+            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+        name: "Yasawa Islands",
+        island: "Yasawa Group",
+        type: "Beach",
+        category: "beach",
+        description:
+            "Relax on tropical beaches and experience clear blue water, island villages, and unforgettable sunsets.",
+        image:
+            "https://images.unsplash.com/photo-1544550285-f813152fb2fd?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+        name: "Denarau Island",
+        island: "Viti Levu",
+        type: "Resort",
+        category: "beach",
+        description:
+            "Enjoy resorts, beaches, golf, restaurants, and easy access to many popular island activities.",
+        image:
+            "https://images.unsplash.com/photo-1505881502353-a1986add3762?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+        name: "Taveuni",
+        island: "Vanua Levu",
+        type: "Nature",
+        category: "nature",
+        description:
+            "Discover waterfalls, rainforest, hiking trails, and spectacular natural scenery on Fiji's Garden Island.",
+        image:
+            "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80"
+    }
+];
+
+const activities = [
+    {
+        name: "Snorkeling",
+        type: "Water",
+        icon: "🤿",
+        description:
+            "Explore Fiji's colourful coral reefs and discover tropical fish in clear warm waters.",
+        location: "Coral Coast and Yasawa Islands"
+    },
+    {
+        name: "Scuba Diving",
+        type: "Water",
+        icon: "🐠",
+        description:
+            "Experience Fiji's famous underwater world with coral reefs, marine life, and dramatic dive sites.",
+        location: "Taveuni and surrounding islands"
+    },
+    {
+        name: "Kayaking",
+        type: "Water",
+        icon: "🛶",
+        description:
+            "Paddle through calm coastal waters, lagoons, and island channels while enjoying tropical scenery.",
+        location: "Yasawa Islands"
+    },
+    {
+        name: "Hiking",
+        type: "Nature",
+        icon: "🥾",
+        description:
+            "Walk through tropical forests and discover viewpoints, waterfalls, and beautiful natural landscapes.",
+        location: "Taveuni and Viti Levu"
+    },
+    {
+        name: "Waterfalls",
+        type: "Nature",
+        icon: "💧",
+        description:
+            "Visit refreshing waterfalls surrounded by lush rainforest and tropical vegetation.",
+        location: "Taveuni and Vanua Levu"
+    },
+    {
+        name: "Village Experiences",
+        type: "Culture",
+        icon: "🏝️",
+        description:
+            "Learn about Fijian traditions, community life, crafts, ceremonies, and local customs.",
+        location: "Fijian villages"
+    },
+    {
+        name: "Local Food",
+        type: "Culture",
+        icon: "🍽️",
+        description:
+            "Taste traditional Fijian dishes and experience the flavours of fresh local ingredients.",
+        location: "Markets and local communities"
+    },
+    {
+        name: "Beach Relaxation",
+        type: "Relaxation",
+        icon: "🌴",
+        description:
+            "Relax on beautiful beaches, enjoy the sunshine, and take in Fiji's peaceful island atmosphere.",
+        location: "Fiji's islands and coastline"
+    }
+];
+
+
+
+function setupNavigation() {
+    const menuButton = document.querySelector("#menu-button");
+    const navigation = document.querySelector("#navigation");
+
+    if (!menuButton || !navigation) {
+        return;
+    }
+
+    menuButton.addEventListener("click", () => {
+        const isOpen = navigation.classList.toggle("open");
+
+        menuButton.setAttribute("aria-expanded", isOpen);
+
+        if (isOpen) {
+            menuButton.setAttribute("aria-label", "Close navigation");
+            menuButton.textContent = "✕";
+        } else {
+            menuButton.setAttribute("aria-label", "Open navigation");
+            menuButton.textContent = "☰";
+        }
+    });
+
+    const navigationLinks = navigation.querySelectorAll("a");
+
+    navigationLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            navigation.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation");
+            menuButton.textContent = "☰";
+        });
+    });
 }
 
-html {
-    scroll-behavior: smooth;
+
+
+function updateYear() {
+    const yearElement = document.querySelector("#current-year");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 }
 
-body {
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-    color: #222;
-    background-color: #f4f1ea;
-    line-height: 1.6;
+
+function updateDateTime() {
+    const dateElement = document.querySelector("#current-date");
+    const timeElement = document.querySelector("#current-time");
+
+    if (!dateElement || !timeElement) {
+        return;
+    }
+
+    const now = new Date();
+
+    dateElement.textContent = now.toLocaleDateString("en-FJ", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+
+    timeElement.textContent = now.toLocaleTimeString("en-FJ", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
 }
 
-img,
-video {
-    max-width: 100%;
+
+
+function createDestinationCard(destination) {
+    return `
+        <article class="card destination-card">
+            <img
+                src="${destination.image}"
+                alt="${destination.name} in Fiji"
+                width="900"
+                height="600"
+                loading="lazy"
+            >
+
+            <div class="card-content">
+                <p class="card-label">
+                    ${destination.type} • ${destination.island}
+                </p>
+
+                <h3>${destination.name}</h3>
+
+                <p>${destination.description}</p>
+
+                <a
+                    class="text-link"
+                    href="destinations.html?place=${encodeURIComponent(destination.name)}"
+                    aria-label="Explore ${destination.name}"
+                >
+                    Explore ${destination.name}
+                </a>
+            </div>
+        </article>
+    `;
 }
 
-img {
-    display: block;
-}
 
-a {
-    color: inherit;
-}
 
-/* HEADER */
-
-.site-header {
-    background-color: #174a5b;
-    color: #ffffff;
-}
-
-.header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.logo {
-    color: #ffffff;
-    text-decoration: none;
-    font-family: "Playfair Display", serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.menu-button {
-    border: 0;
-    background: transparent;
-    color: #ffffff;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-}
-
-.site-nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    background-color: #103746;
-    margin-top: 1rem;
-}
-
-.site-nav.open {
-    display: flex;
-}
-
-.site-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    text-align: center;
-    padding: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    font-weight: 600;
-}
-
-.site-nav a:hover,
-.site-nav a.active {
-    background-color: #236b7d;
-}
-
-/* HERO VIDEO */
-
-.hero {
-    position: relative;
-    min-height: 72vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    isolation: isolate;
-    background-color: #174a5b;
-}
-
-.hero-video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.35),
-        rgba(0, 0, 0, 0.50)
+function displayFeaturedDestinations() {
+    const destinationContainer = document.querySelector(
+        "#featured-destinations"
     );
-    z-index: -1;
-}
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 850px;
-    padding: 4rem 1.5rem;
-    text-align: center;
-    color: #ffffff;
-}
-
-.hero-content h1 {
-    margin: 0.5rem 0 1rem;
-    color: #ffffff;
-    font-family: "Playfair Display", serif;
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    line-height: 1.1;
-}
-
-.hero-content p:not(.eyebrow) {
-    max-width: 700px;
-    margin: 0 auto 1.5rem;
-    color: #ffffff;
-    font-size: 1.1rem;
-}
-
-.eyebrow {
-    margin: 0 0 0.5rem;
-    color: #d6a84f;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-/* BUTTONS */
-
-.button {
-    display: inline-block;
-    padding: 0.8rem 1.4rem;
-    border-radius: 0.35rem;
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.button:hover {
-    transform: translateY(-2px);
-}
-
-.button-primary {
-    background-color: #d6a84f;
-    color: #172b32;
-}
-
-.button-primary:hover {
-    opacity: 0.9;
-}
-
-.button-secondary {
-    background-color: #174a5b;
-    color: #ffffff;
-}
-
-.button-secondary:hover {
-    background-color: #236b7d;
-}
-
-/* SECTIONS */
-
-.section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 1rem;
-}
-
-.section-heading {
-    max-width: 750px;
-    margin: 0 auto 2rem;
-    text-align: center;
-}
-
-.section-heading h2 {
-    margin: 0.25rem 0 0.75rem;
-    color: #174a5b;
-    font-family: "Playfair Display", serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-}
-
-.section-heading p:last-child {
-    margin-bottom: 0;
-}
-
-/* CARDS */
-
-.card-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.card {
-    overflow: hidden;
-    background-color: #ffffff;
-    border-radius: 0.6rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.destination-card img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 1.25rem;
-}
-
-.card-content h3 {
-    margin: 0.3rem 0 0.6rem;
-    color: #174a5b;
-    font-family: "Playfair Display", serif;
-    font-size: 1.5rem;
-}
-
-.card-label {
-    margin: 0;
-    color: #55717a;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.text-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: #174a5b;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.text-link:hover {
-    text-decoration: underline;
-}
-
-.center-content {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-/* ACTIVITIES */
-
-.section-green {
-    max-width: none;
-    background-color: #dfe9e3;
-}
-
-.activity-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.activity-card {
-    padding: 1.5rem;
-    background-color: #ffffff;
-    border-radius: 0.6rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-}
-
-.activity-icon {
-    display: block;
-    margin-bottom: 0.75rem;
-    font-size: 2.5rem;
-}
-
-.activity-card h3 {
-    margin: 0 0 0.5rem;
-    color: #174a5b;
-    font-family: "Playfair Display", serif;
-}
-
-/* CALLOUT */
-
-.callout {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
-.callout h2 {
-    margin: 0.25rem 0 0.75rem;
-    color: #174a5b;
-    font-family: "Playfair Display", serif;
-    font-size: 2.2rem;
-}
-
-/* FOOTER */
-
-.site-footer {
-    background-color: #103746;
-    color: #ffffff;
-}
-
-.footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    text-align: center;
-}
-
-.footer-logo {
-    margin: 0;
-    font-family: "Playfair Display", serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.footer-links {
-    margin: 1rem 0;
-}
-
-.footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-/* TABLET */
-
-@media (min-width: 600px) {
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
+    if (!destinationContainer) {
+        return;
     }
 
-    .activity-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    const featuredDestinations = destinations.slice(0, 3);
 
-    .hero-content {
-        padding: 5rem 2rem;
-    }
+    destinationContainer.innerHTML = featuredDestinations
+        .map(createDestinationCard)
+        .join("");
 }
 
-/* DESKTOP */
 
-@media (min-width: 800px) {
-    .header-inner {
-        flex-wrap: nowrap;
+
+function displayDestinations(filter = "all") {
+    const destinationContainer = document.querySelector(
+        "#destination-list"
+    );
+
+    const message = document.querySelector("#destination-message");
+
+    if (!destinationContainer) {
+        return;
     }
 
-    .menu-button {
-        display: none;
+    const filteredDestinations =
+        filter === "all"
+            ? destinations
+            : destinations.filter(
+                (destination) => destination.category === filter
+            );
+
+    if (filteredDestinations.length === 0) {
+        destinationContainer.innerHTML = "";
+
+        if (message) {
+            message.textContent =
+                "No destinations were found for this category.";
+        }
+
+        return;
     }
 
-    .site-nav {
-        display: flex;
-        width: auto;
-        flex-direction: row;
-        background-color: transparent;
-        margin-top: 0;
+    if (message) {
+        message.textContent = "";
     }
 
-    .site-nav a {
-        border-top: 0;
-        padding: 0.5rem 0.8rem;
-        border-radius: 0.25rem;
-    }
-
-    .card-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .activity-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .hero {
-        min-height: 78vh;
-    }
+    destinationContainer.innerHTML = filteredDestinations
+        .map(createDestinationCard)
+        .join("");
 }
 
-/* MOBILE */
 
-@media (max-width: 599px) {
-    .hero {
-        min-height: 75vh;
+
+function displaySelectedDestination(destinationName) {
+    const destinationContainer = document.querySelector(
+        "#destination-list"
+    );
+
+    const message = document.querySelector("#destination-message");
+
+    if (!destinationContainer || !destinationName) {
+        return;
     }
 
-    .hero-content {
-        padding: 3rem 1rem;
+    const selectedDestination = destinations.find(
+        (destination) =>
+            destination.name.toLowerCase() ===
+            destinationName.toLowerCase()
+    );
+
+    if (!selectedDestination) {
+        if (message) {
+            message.textContent =
+                "Sorry, that destination could not be found.";
+        }
+
+        displayDestinations();
+        return;
     }
 
-    .hero-content h1 {
-        font-size: 3rem;
+    destinationContainer.innerHTML =
+        createDestinationCard(selectedDestination);
+
+    if (message) {
+        message.textContent = "";
     }
 
-    .hero-content p:not(.eyebrow) {
-        font-size: 1rem;
-    }
+    const filter = document.querySelector("#destination-filter");
 
-    .callout {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-/* REDUCED MOTION */
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    .hero-video {
-        display: none;
-    }
-
-    .hero {
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.5)
-        );
-    }
-
-    .button {
-        transition: none;
+    if (filter) {
+        filter.value = "all";
     }
 }
 
 
-const styleTag = document.createElement("style");
-styleTag.textContent = projectStyles;
-document.head.appendChild(styleTag);
+
+function setupDestinationFilter() {
+    const filter = document.querySelector("#destination-filter");
+
+    if (!filter) {
+        return;
+    }
+
+    filter.addEventListener("change", (event) => {
+        displayDestinations(event.target.value);
+    });
+}
+
+
+
+function createActivityCard(activity) {
+    return `
+        <article class="card activity-card">
+            <div class="activity-icon" aria-hidden="true">
+                ${activity.icon}
+            </div>
+
+            <div class="card-content">
+                <p class="card-label">${activity.type}</p>
+
+                <h3>${activity.name}</h3>
+
+                <p>${activity.description}</p>
+
+                <p>
+                    <strong>Where:</strong>
+                    ${activity.location}
+                </p>
+            </div>
+        </article>
+    `;
+}
+
+
+
+function displayActivities(filter = "all") {
+    const activityContainer = document.querySelector("#activity-list");
+    const message = document.querySelector("#activity-message");
+
+    if (!activityContainer) {
+        return;
+    }
+
+    const filteredActivities =
+        filter === "all"
+            ? activities
+            : activities.filter(
+                (activity) =>
+                    activity.type.toLowerCase() ===
+                    filter.toLowerCase()
+            );
+
+    if (filteredActivities.length === 0) {
+        activityContainer.innerHTML = "";
+
+        if (message) {
+            message.textContent =
+                "No activities were found for this category.";
+        }
+
+        return;
+    }
+
+    if (message) {
+        message.textContent = "";
+    }
+
+    activityContainer.innerHTML = filteredActivities
+        .map(createActivityCard)
+        .join("");
+}
+
+
+
+function setupActivityFilter() {
+    const filter = document.querySelector("#activity-filter");
+
+    if (!filter) {
+        return;
+    }
+
+    filter.addEventListener("change", (event) => {
+        displayActivities(event.target.value);
+    });
+}
+
+
+
+function saveVisitorPreference(name, interest) {
+    const visitorPreference = {
+        name: name,
+        interest: interest
+    };
+
+    localStorage.setItem(
+        "fijiExplorerPreference",
+        JSON.stringify(visitorPreference)
+    );
+}
+
+function loadVisitorPreference() {
+    const savedPreference = localStorage.getItem(
+        "fijiExplorerPreference"
+    );
+
+    if (!savedPreference) {
+        return;
+    }
+
+    try {
+        const preference = JSON.parse(savedPreference);
+
+        const nameInput = document.querySelector("#name");
+        const interestSelect = document.querySelector("#interest");
+
+        if (nameInput && preference.name) {
+            nameInput.value = preference.name;
+        }
+
+        if (interestSelect && preference.interest) {
+            interestSelect.value = preference.interest;
+        }
+    } catch (error) {
+        localStorage.removeItem("fijiExplorerPreference");
+    }
+}
+
+
+
+function setupContactForm() {
+    const form = document.querySelector("#contact-form");
+
+    if (!form) {
+        return;
+    }
+
+    loadVisitorPreference();
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const nameInput = document.querySelector("#name");
+        const emailInput = document.querySelector("#email");
+        const interestSelect = document.querySelector("#interest");
+        const messageInput = document.querySelector("#message");
+        const savePreference =
+            document.querySelector("#save-preference");
+        const formMessage = document.querySelector("#form-message");
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const interest = interestSelect.value;
+        const message = messageInput.value.trim();
+
+        if (
+            name.length < 2 ||
+            email.length === 0 ||
+            interest === "" ||
+            message.length < 10
+        ) {
+            formMessage.textContent =
+                "Please complete all required fields before submitting.";
+            return;
+        }
+
+        if (savePreference && savePreference.checked) {
+            saveVisitorPreference(name, interest);
+        }
+
+        formMessage.textContent =
+            `Thank you, ${name}! Your message has been received. We will review your interest in ${interest}.`;
+
+        form.reset();
+
+        if (savePreference && savePreference.checked) {
+            loadVisitorPreference();
+        }
+    });
+}
+
+
+
+function initializeSite() {
+    setupNavigation();
+    updateYear();
+    updateDateTime();
+
+    displayFeaturedDestinations();
+
+    /*
+     * Check whether the URL contains a specific destination.
+     * Example:
+     * destinations.html?place=Suva
+     */
+    const pageParams = new URLSearchParams(window.location.search);
+    const selectedPlace = pageParams.get("place");
+
+    if (selectedPlace) {
+        displaySelectedDestination(selectedPlace);
+    } else {
+        displayDestinations();
+    }
+
+    setupDestinationFilter();
+    displayActivities();
+    setupActivityFilter();
+    setupContactForm();
+}
+
+initializeSite();
